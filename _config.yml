@@ -1,18 +1,20 @@
-# Hexo Configuration
+#Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
-timezone:
+title: Cumpulsive curiosity
+subtitle: 
+description: 
+author: danfergo
+language: en
+timezone: Europe/Lisbon
+header-img: img/home-bg.jpg
+
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://danfergo.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -24,7 +26,7 @@ tag_dir: tags
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
-i18n_dir: :lang
+#i18n_dir: :lang
 skip_render:
 
 # Writing
@@ -48,6 +50,34 @@ default_category: uncategorized
 category_map:
 tag_map:
 
+
+# Friends
+friends: [
+    {
+        title: "Diogo Gomes",
+        href: "http://paginas.fe.up.pt/~up201106586"
+    }
+]
+
+# Featured Tags
+featured-tags: true                    # whether or not using Feature-Tags
+featured-condition-size: 1             # A tag will be featured if the size of it is more than this condition value
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: ""
+sidebar-avatar: img/avatar.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+#RSS Feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+
+
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
@@ -63,10 +93,21 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: clean-blog
+theme: huxblog
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo: https://github.com/danfergo/danfergo.github.io.git
+
+#Development
+livereload:
+  port: 35729
+
+#Social
+github_username: danfergo
+linkedin_username: daniel-gomes-769604b7
+
+# Disqus comments
+disqus_username: danfergo

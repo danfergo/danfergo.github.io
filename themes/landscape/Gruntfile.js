@@ -22,7 +22,7 @@ module.exports = function(grunt){
         dest: 'source/css/fonts/'
       },
       fancybox: {
-        expand: true,
+        expand: true, 
         cwd: 'tmp/fancybox/source/',
         src: ['**'],
         dest: 'source/fancybox/'
