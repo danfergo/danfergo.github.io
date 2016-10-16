@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Cumpulsive curiosity
+title: Compulsive curiosity
 subtitle: 
 description: 
 author: danfergo
@@ -111,3 +111,9 @@ linkedin_username: daniel-gomes-769604b7
 
 # Disqus comments
 disqus_username: danfergo
+
+#Google analytics
+ga_track_id: UA-85798112-1 
+
+
+
