@@ -36,7 +36,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -44,6 +44,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
+
 
 # Category & Tag
 default_category: uncategorized
@@ -99,7 +100,10 @@ theme: huxblog
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/danfergo/danfergo.github.io.git
+  repo: git@github.com:danfergo/danfergo.github.io.git
+
+admin:
+  deployCommand: "./hexo_git_deploy.sh"
 
 #Development
 livereload:
