@@ -14,11 +14,11 @@ layout: page
             <%- post.subtitle || "" %>
         </h3>
         <div class="post-content-preview">
-            <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %>...
+            <%- truncate(strip_html(post.content), {length: 200, omission: ' '}) %>...
         </div>
     </a>
     <p class="post-meta">
-        Posted by <%- post.author || config.author %> on
+        <!--Posted by <%- post.author || config.author %> on-->
         <%= post.date.format(config.date_format) %>
     </p>
 

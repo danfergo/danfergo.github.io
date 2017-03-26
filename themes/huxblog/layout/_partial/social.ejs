@@ -1,0 +1,23 @@
+<ul class="list-inline">
+    <% if (config.feed) { %>
+        <li>
+            <a href="<%= '/' + config.feed.path %>">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    <% } %>
+
+    <% for(var u in config.social){ %>
+        <li>
+            <a target="_blank" href="<%= config.social[u].url %>">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa <%= config.social[u].fa_class %> fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    <% } %>
+</ul>

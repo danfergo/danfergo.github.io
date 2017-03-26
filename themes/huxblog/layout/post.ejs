@@ -7,11 +7,11 @@ layout: layout
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        background-image: url('<%= page["header-img"] || config.root + config["header-img"] %>')
-    }
-</style>
+<!--<style type="text/css">-->
+    <!--header.intro-header{-->
+        <!--background-image: url('<%= page["header-img"] || config.root + config["header-img"] %>')-->
+    <!--}-->
+<!--</style>-->
 <header class="intro-header" >
     <div class="container">
         <div class="row">
@@ -25,7 +25,7 @@ layout: layout
                     <h1><%= page.title %></h1>
                     <h2 class="subheading"><%= page.subtitle || "" %></h2>
                     <span class="meta">
-                        Posted by <%- page.author || config.author %> on
+                        <!--Posted by <%- page.author || config.author %> on -->
                         <%= page.date.format(config.date_format) %>
                     </span>
                 </div>
@@ -41,8 +41,8 @@ layout: layout
 
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
                 col-sm-12
                 col-xs-12
                 post-container">
@@ -51,9 +51,9 @@ layout: layout
 
                 <hr>
 
-                <% if(config['duoshuo_share'] && config['duoshuo_username']) { %>
-                <!-- 多说 Share start -->
-                </style>
+                <!--<% if(config['duoshuo_share'] && config['duoshuo_username']) { %>-->
+                <!--&lt;!&ndash; Share start &ndash;&gt;-->
+                <!--</style>-->
                 <div class="ds-share"
                     style="text-align: right"
                     data-thread-key="<%= page.path %>"
@@ -129,66 +129,48 @@ layout: layout
 
     <!-- Sidebar Container -->
 
-            <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+            <!--<div class="-->
+                <!--col-lg-3 col-lg-offset-0-->
+                <!--col-md-3 col-md-offset-0-->
+                <!--col-sm-12-->
+                <!--col-xs-12-->
+                <!--sidebar-container-->
+            <!--">-->
 
-                <!-- Featured Tags -->
-                <% if(config['featured-tags']) { %>
-                <section>
-                    <!-- no hr -->
-                    <h5><a href="<%= config.root %>tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                       <% page.tags.forEach(function(tag){ %>
-                          <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
-                        <% }) %>
-                    </div>
-                </section>
-                <% }%>
+                <!--&lt;!&ndash; Featured Tags &ndash;&gt;-->
+                <!--<% if(config['featured-tags']) { %>-->
+                <!--<section>-->
+                    <!--&lt;!&ndash; no hr &ndash;&gt;-->
+                    <!--<h5><a href="<%= config.root %>tags/">FEATURED TAGS</a></h5>-->
+                    <!--<div class="tags">-->
+                       <!--<% page.tags.forEach(function(tag){ %>-->
+                          <!--<a class="tag" href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>-->
+                        <!--<% }) %>-->
+                    <!--</div>-->
+                <!--</section>-->
+                <!--<% }%>-->
 
-                <!-- Friends Blog -->
-                <% if(config.friends) { %>
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
+                <!--&lt;!&ndash; Friends Blog &ndash;&gt;-->
+                <!--<% if(config.friends) { %>-->
+                <!--<hr>-->
+                <!--<h5>FRIENDS</h5>-->
+                <!--<ul class="list-inline">-->
 
-                    <% config.friends.forEach(function(friend){ %>
-                        <li><a href="<%= friend.href %>" target="_blank"><%= friend.title %></a></li>
-                    <% }); %>
-                </ul>
-                <% }%>
-            </div>
+                    <!--<% config.friends.forEach(function(friend){ %>-->
+                        <!--<li><a href="<%= friend.href %>" target="_blank"><%= friend.title %></a></li>-->
+                    <!--<% }); %>-->
+                <!--</ul>-->
+                <!--<% }%>-->
+            <!--</div>-->
 
         </div>
     </div>
 </article>
 
-<% if(config['duoshuo_username']) { %>
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    // dynamic User by Hux
-    var _user = '<%= config['duoshuo_username'] %>';
 
-    // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
-<!-- 多说公共JS代码 end -->
-<% } %>
 
 <% if(config['disqus_username']) { %>
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<!-- disqus start -->
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "<%= config['disqus_username'] %>";
@@ -201,7 +183,7 @@ layout: layout
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<!-- disqus 公共JS代码 end -->
+<!-- disqus end -->
 <% } %>
 
 

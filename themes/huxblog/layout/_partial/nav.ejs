@@ -3,13 +3,22 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+            <button class="hamburger hamburger--spring navbar-toggle" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
             </button>
-            <a class="navbar-brand" href="<%= config.root %>"><%= config.title %></a>
+            <!--<button type="button" class="navbar-toggle">-->
+            <!--<span class="sr-only">Toggle navigation</span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            <% if(page.title) { %>
+            <a class="navbar-brand" href="<%= config.root %>">
+                <%= config.title %>
+            </a>
+            <% } %>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,13 +36,13 @@
 
                     <% site.pages.forEach(function(page){ %>
 
-                        <% if(page.title){ %>
-                        <li>
-                            <a href="<%= config.root %><%= page.path.replace('index.html', '') %>"><%= page.title %></a>
-                        </li>
-                        <% } %>
+                    <% if(page.title){ %>
+                    <li>
+                        <a href="<%= config.root + page.path.replace('index.html', '') %>"><%= page.title %></a>
+                    </li>
+                    <% } %>
                     <% }); %>
-                    
+
                 </ul>
             </div>
         </div>
@@ -45,27 +54,35 @@
     // Drop Bootstarp low-performance Navbar
     // Use customize navbar with high-quality material design animation
     // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
+    var $body = document.body;
     var $toggle = document.querySelector('.navbar-toggle');
     var $navbar = document.querySelector('#huxblog_navbar');
     var $collapse = document.querySelector('.navbar-collapse');
 
     $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
+    function handleMagic(e) {
         if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
+            // CLOSE
             $navbar.className = " ";
             // wait until animation end.
-            setTimeout(function(){
+            setTimeout(function () {
                 // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
+                if ($navbar.className.indexOf('in') < 0) {
                     $collapse.style.height = "0px"
                 }
-            },400)
-        }else{
-        // OPEN
+            }, 400)
+
+            var pos = $toggle.className.indexOf("is-active");
+            if (pos > 0) {
+                $toggle.className = $toggle.className.substr(0, pos);
+            }
+
+
+        } else {
+            // OPEN
             $collapse.style.height = "auto"
             $navbar.className += " in";
+            $toggle.className += " is-active";
         }
     }
 </script>

@@ -2,43 +2,43 @@
 layout: page
 ---
 
-xxxxxx
-<!-- Chinese Version -->
-<div class="zh post-container">
+
+<div class="post-container">
     <%- page.content %>
 </div>
 
 
 
 
-<% if(config['duoshuo_username']) { %>
+<!--<% if(config['duoshuo_username']) { %>-->
 
-<!-- 多说评论框 start -->
-<div class="comment">
-    <div class="ds-thread"
-        data-thread-key="<%= page.path %>"
-        data-title="<%= page.title %>"
-        data-url="<%= page.permalink %>" >
-    </div>
-</div>
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    // dynamic User by Hux
-    var _user = '<%= config['duoshuo_username'] %>';
+<!--&lt;!&ndash; 多说评论框 start &ndash;&gt;-->
+<!--<div class="comment">-->
+    <!--<div class="ds-thread"-->
+        <!--data-thread-key="<%= page.path %>"-->
+        <!--data-title="<%= page.title %>"-->
+        <!--data-url="<%= page.permalink %>" >-->
+    <!--</div>-->
+<!--</div>-->
 
-    // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
-<!-- 多说公共JS代码 end -->
-<% } %>
+<!--&lt;!&ndash; 多说公共JS代码 start (一个网页只需插入一次) &ndash;&gt;-->
+<!--<script type="text/javascript">-->
+    <!--// dynamic User by Hux-->
+    <!--var _user = '<%= config['duoshuo_username'] %>';-->
+
+    <!--// duoshuo comment query.-->
+    <!--var duoshuoQuery = {short_name: _user };-->
+    <!--(function() {-->
+        <!--var ds = document.createElement('script');-->
+        <!--ds.type = 'text/javascript';ds.async = true;-->
+        <!--ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';-->
+        <!--ds.charset = 'UTF-8';-->
+        <!--(document.getElementsByTagName('head')[0]-->
+         <!--|| document.getElementsByTagName('body')[0]).appendChild(ds);-->
+    <!--})();-->
+<!--</script>-->
+<!--&lt;!&ndash; 多说公共JS代码 end &ndash;&gt;-->
+<!--<% } %>-->
 
 
 <% if(config['disqus_username']) { %>
@@ -47,9 +47,8 @@ xxxxxx
 
     </div>
 </div>
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<!-- disqus start -->
 <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "<%= config['disqus_username'] %>";
     var disqus_identifier = "<%= page.permalink %>";
     var disqus_url = "<%= page.permalink %>";
@@ -60,6 +59,6 @@ xxxxxx
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<!-- disqus 公共JS代码 end -->
+<!-- disqus end -->
 <% } %>
 
