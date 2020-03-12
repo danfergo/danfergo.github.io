@@ -18,7 +18,7 @@ layout: layout
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
                     <div class="tags">
-                        <% page.tags.forEach(function(tag){ %>
+                        <% page.tags.filter(t => t.name != 'featured').forEach(function(tag){ %>
                           <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
                         <% }) %>
                     </div>

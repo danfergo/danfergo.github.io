@@ -19,11 +19,13 @@
 
 
 
-                <% if(config['sidebar-about-description']) { %>
-                <p><%= config['sidebar-about-description'] %><br><a href="/about/" title="More about me">
-                        More. </a></p>
-                <% } %>
-
+                <% config['sidebar-about-description'].forEach(function(ln, i, arr){ %>
+                <p><%= ln %>
+                    <% if (i == arr.length - 1) { %>
+                            <a href="/about/" title="More about me"> More. </a>
+                    <% } %>
+                </p>
+                <% }) %>
                 <!--<div class="hidden-xs visible-md">-->
                     <!-- Social links -->
                     <!--<%- partial('_partial/social') %>-->
@@ -41,7 +43,7 @@
             <!-- no hr -->
             <h5><a href="<%= config.root %>tags/">FEATURED TAGS</a></h5>
             <div class="tags">
-                <% site.tags.map(function(tag){ %>
+                <% site.tags.filter(t => t.name != 'featured').map(function(tag){ %>
                 <% if(tag.length > config['featured-condition-size']) { %>
                 <a href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"
                    rel="<%= tag.length %>"><%= tag.name %></a>
