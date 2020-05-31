@@ -5,15 +5,15 @@ date: 2016-10-14 04:08:01
 ---
 Hi!,
 
-My name is Daniel Fernandes Gomes, I was born in 94 and I’m from S. Paio de Oleiros; a northen, near the coast, Portuguese village. Though, many times you may also find me using my alias, Danfergo, which is the agglutination of my full name.
+My name is Daniel Fernandes Gomes, I was born in 94 and I’m from S. Paio de Oleiros; a northen, near the coast, Portuguese town. Though, many times you may also find me using my alias, Danfergo, which is the agglutination of my full name.
 
-My memories begin with me launching my little car toys against the wall and playing with every thing else I could find at home. Tying chairs and tables with wool yarn was a trend back then.
+My memories begin with me launching my little toy cars against the wall and playing with everything else I could find at home. Tying chairs and tables with wool yarn was a trend back then.
 
-Around eight, I’ve broke my bike and from their on that was my main toy. I’ve self-learned how to take it apart, fix it and a few years latter reinventing it as a tricycle with a steering wheel from an old car.
+Around eight, I’ve my bike's tire flattened and from their on that was my main toy. I’ve self-learned how to take it apart, fix it and a few years later reinventing it as a tricycle with a steering wheel from an old car.
 
-At this age, I was studying at the elementary schools of S. Paio de Oleiros and Santa Maria de Lamas (lattest year) while attending catechesis, which I kept frequenting until the 9th grade.
+At this age, I was studying at the elementary schools of S. Paio de Oleiros and Santa Maria de Lamas (latest year) while attending "sunday school", which I kept attending until my 9th grade.
 
-The next studying cycles happened at Colégio Liceal de Santa Maria de Lamas, where I was doing enough to keep reasonable grades while, I would be joining a few clubs, in different years: history, english and arts. A lot more seriously, I’ve joined theatre group where I stayed until the end of the high-school, performing during 5 and half years, around 10 different plays.
+The next studying cycles happened at Colégio Liceal de Santa Maria de Lamas, where I was doing enough to keep reasonable grades while I would be joining a few clubs, in different years: history, english and arts. A lot more seriously, I’ve joined theatre group where I stayed until the end of the high-school, performing during 5 and half years, around 10 different plays.
 
 At 15, when the social network Hi5 was at its pick, I’ve found the CSS “codes” and browser source view. I was amazed by It and I’ve embarked on this new learning through hacking path. About a year latter I was publishing tutorials on Youtube and on TOUTLOUD, a forum which I created with the help of a few friends and reached around 2500 users. This motivated me to learn my first programming languages: JavaScript and Php. The forum died when the social network disabled HTML/CSS support.
 
@@ -37,7 +37,7 @@ Since the summer of 2015 I’ve also been working with university professors, un
 
 This a bit of who I am. At least so far.
 
-If you think that you might have common interests with me, don’t hesitate in contact me.
+If you think that you might have common interests with me, don’t hesitate in contacting me.
 
-Keep doing stuff!
+Think less, talk less, do more.
 Daniel

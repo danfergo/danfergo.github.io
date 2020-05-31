@@ -590,18 +590,30 @@ pre code {
     }
 }
 
-.post-preview {
+.index.post-preview {
     display: grid;
     grid-template-columns: 20rem auto;
 }
 
-.post-preview > .img-preview a {
-    display:block;
-    padding-bottom: 100%;
-    background-size: contain;
+.index.post-preview > .img-preview a {
+    display: block;
+    padding-bottom: 90%;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     margin: 2rem 2rem 0 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .index.post-preview {
+        display: block;
+    }
+
+    .index.post-preview > .img-preview a {
+        margin: 2rem 0 0 0;
+        padding-bottom: 70%;
+    }
+
 }
 
 .post-preview > .text-preview > a {
@@ -1059,6 +1071,11 @@ body {
     max-width: 100%;
     height: auto;
     margin: 1.5em auto 1.6em auto;
+}
+
+.post-container video {
+    width: 100%;
+    height: 66.67%;
 }
 
 /* Hux Optimize UserExperience */

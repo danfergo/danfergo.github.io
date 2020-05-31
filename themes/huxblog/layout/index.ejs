@@ -3,8 +3,8 @@ layout: page
 ---
 <!-- Main Content -->
 
-<% site.tags.findOne({name: 'featured'}).posts.each(function(post){ %>
-<div class="post-preview">
+<% site.tags.findOne({name: 'featured'}).posts.sort('date').reverse().each(function(post){ %>
+<div class="index post-preview">
     <div class="img-preview">
         <a href="<%- config.root %><%- post.path %>"
            title="<%- post.title || "Untitled" %>"

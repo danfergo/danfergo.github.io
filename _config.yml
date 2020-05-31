@@ -132,8 +132,5 @@ disqus_username: danfergo
 #Google analytics
 ga_track_id: UA-85798112-1
 
-alias:
-  api/index.html: 2020/03/07/GelTip/
-
 metadata:
   cover:
