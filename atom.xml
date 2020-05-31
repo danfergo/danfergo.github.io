@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Compulsive curiosity</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://danfergo.github.io/"/>
+  <updated>2020-05-31T00:04:15.690Z</updated>
+  <id>http://danfergo.github.io/</id>
+  
+  <author>
+    <name>danfergo</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GelTip: A Finger-shaped Optical Tactile Sensor for Robotic Manipulation</title>
+    <link href="http://danfergo.github.io/2020/03/07/GelTip/"/>
+    <id>http://danfergo.github.io/2020/03/07/GelTip/</id>
+    <published>2020-03-07T20:08:00.000Z</published>
+    <updated>2020-05-31T00:04:15.690Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><img width="50%" height="30rem" src="cover.jpg" title="The GelTip Optical Tactile Sensor" style="float:right;"> <p>Sensing contacts throughout the entire finger, is anhighly valuable capability for a robot to perform manipulationtasks,  as  vision-based  sensing  often  suffers  from  occlusions  orinaccurate  estimations.  Current  tactile  sensors  represent  oneof  two  compromises:  low  resolution  readings,  or  a  limitedcontact  measurement  area.  In  this  paper,  we  propose  a  finger-shaped  optical  sensor  that  has  the  shape  of  a  finger  and  cansense  contacts  on  any  location  of  its  surface.  Our  extensiveexperiments  show  that  the  sensor  can  effectively  localise  thesecontacts  at  different  locations  of  its  finger  body,  with  a  smalllocalisation error of approximately 5mm, on average, and under1mm in the best cases. Furthermore, our grasping experimentsdemonstrate  the  advantages  of  leveraging  touch  sensing  inmanipulation  tasks,  together  with  remote  sensing  capabilities,such  as  vision</p><div style="clear:both"> </div> <video width="600" height="300" controls>  <source src="exp_contact_detection.mp4" type="video/ogg">Your browser does not support the video tag.</video><video width="600" height="300" controls>  <source src="exp_world_blocks.mp4" type="video/ogg">Your browser does not support the video tag.</video><p><strong>This post will be updated soon with references for the extended publication, other materials (sensor STL files).</strong></p><h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Zhonglin Lin and Shan Luo, &quot;GelSight Simulation for Sim2Real Learning&quot;, ViTac Workshop ICRA 2020. <strong><a href="http://wordpress.csc.liv.ac.uk/smartlab/wp-content/uploads/sites/5/2020/05/ICRA2020ViTac_paper_5.pdf" target="_blank" rel="noopener">paper</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;
+&lt;img width=&quot;50%&quot; height=&quot;30rem&quot; src=&quot;cov
+      
+    
+    </summary>
+    
+    
+      <category term="touch" scheme="http://danfergo.github.io/tags/touch/"/>
+    
+      <category term="featured" scheme="http://danfergo.github.io/tags/featured/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GelSight Simulation for Sim2Real Learning</title>
+    <link href="http://danfergo.github.io/2019/05/20/GelSight-Simulation/"/>
+    <id>http://danfergo.github.io/2019/05/20/GelSight-Simulation/</id>
+    <published>2019-05-20T22:55:00.000Z</published>
+    <updated>2020-05-31T00:03:44.722Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Grasping and manipulation of objects are commonboth in domestic and industrial environments. Recent worksexploring learning based solutions have shown promising re-sults  on  robotic  manipulation  tasks.  One  efficient  approachfor training such learning agents is to train them within asimulated environment, followed by their deployment on realrobots (Sim2Real). Most current works leverage camera vision tofacilitate such manipulation tasks. However, camera vision mightbe significantly occluded by robot hands during the manipulation.Tactile sensing is another important sensing modality that offerscomplementary  information  to  vision  and  can  make  up  theinformation loss caused by the occlusion. However, the use oftactile sensing is restricted in theSim2Realresearch due tono simulated tactile sensors available in the current simulationplatforms. To mitigate the gap, we introduce a novel approach forsimulating a GelSight tactile sensor in the commonly used Gazebosimulator. Similar to the real GelSight sensor, the simulatedsensor can produce high-resolution images by an optical sensorfrom the interaction between the touched object and an opaquesoft membrane. It can indirectly sense forces, geometry, texture and other properties of the object and enables the research ofSim2Real learning with tactile sensing. Preliminary experiment results have shown that the simulated sensor could generate realistic outputs similar to ones captured by a real GelSight sensor. </p><img src="/2019/05/20/GelSight-Simulation/envs.png"><img src="/2019/05/20/GelSight-Simulation/samples.png"><p><strong>This post will be updated soon with references for the conference publication, source code (ROS Packages &amp; Simulation for Gazebo) and other materials (STL files).</strong></p><h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Achu Wilson and Shan Luo, &quot;GelSight Simulation for Sim2Real Learning&quot;, ViTac Workshop ICRA 2019. <strong><a href="http://wordpress.csc.liv.ac.uk/smartlab/wp-content/uploads/sites/5/2019/06/ICRA2019ViTac_paper_8.pdf" target="_blank" rel="noopener">paper</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;p&gt;Grasping and manipulation of objects a
+      
+    
+    </summary>
+    
+    
+      <category term="touch" scheme="http://danfergo.github.io/tags/touch/"/>
+    
+      <category term="featured" scheme="http://danfergo.github.io/tags/featured/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GarmNet: Improving Global with Local Perception for Robotic Laundry Folding</title>
+    <link href="http://danfergo.github.io/2019/03/02/garmnet/"/>
+    <id>http://danfergo.github.io/2019/03/02/garmnet/</id>
+    <published>2019-03-02T22:29:00.000Z</published>
+    <updated>2020-05-30T23:50:23.757Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Developing autonomous assistants to help with domestic tasks is a vital topic in robotics research. Among these tasks, garment folding is one of them that is still far from being achieved mainly due to the large number of possible configurations that a crumpled piece of clothing may exhibit. Research has been done on either estimating the pose of the garment as a whole or detecting the landmarks for grasping separately. However, such works constrain the capability of the robots to perceive the states of the garment by limiting the representations for one single task. In this paper, we propose a novel end-to-end deep learning model named GarmNet that is able to simultaneously localize the garment and detect landmarks for grasping. The localization of the garment represents the global information for recognising the category of the garment, whereas the detection of landmarks can facilitate sub-sequent grasping actions. We train and evaluate our proposed GarmNet model using the CloPeMa Garment dataset that contains 3,330 images of different garment types in different poses. The experiments show that the inclusion of landmark detection (GarmNet-B) can largely improve the garment localization, with an error rate of 24.7% lower. Solutions as ours are important for robotics applications, as these offer scalable to many classes, memory and processing efficient solutions.</p><img src="/2019/03/02/garmnet/img_spacial_constraint.png" title="Spatial Constraint"><h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">GarmNet: Improving Global with Local Perception for Robotic Laundry Folding, TAROS 2019, <strong><a href="%5Bhttps://arxiv.org/abs/1907.00408%5D">arxiv</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Detecting garment and its landmarks MSc dissertation, 2017-07-18. <strong><a href="https://hdl.handle.net/10216/107701" target="_blank" rel="noopener">UP Open Repository</a></strong><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;p&gt;Developing autonomous assistants to he
+      
+    
+    </summary>
+    
+    
+      <category term="featured" scheme="http://danfergo.github.io/tags/featured/"/>
+    
+      <category term="vision" scheme="http://danfergo.github.io/tags/vision/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Clevo P65xRP / Inphtech P600-G on Linux</title>
+    <link href="http://danfergo.github.io/2016/10/17/clevo-p65xrp-inphtech-p600-g-on-linux/"/>
+    <id>http://danfergo.github.io/2016/10/17/clevo-p65xrp-inphtech-p600-g-on-linux/</id>
+    <published>2016-10-17T00:00:00.000Z</published>
+    <updated>2020-05-30T21:21:47.809Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>This is going to be a very atypical post on this blog but, because I spent almost two weeks to figure it out I’ll leave it here. These configs will probably change with time and so, I’ll be updating this post in a logbook manner.</p><img src="/2016/10/17/clevo-p65xrp-inphtech-p600-g-on-linux/clevo-linux.jpg" title="Antergos Gnome on my Clevo P65x"><h4 id="16th-october-2016"><a href="#16th-october-2016" class="headerlink" title="16th october 2016"></a>16th october 2016</h4><p>I’m running Antergos with Gnome desktop environment and 4.7.6-1-ARCH kernel on UEFI, gpt/lvm partitioning and systemd-boot loader.</p><ol><li><strong>Headphone jack:</strong> when I closed the lead, suspended or hibernated the computer the headphone jack would stop working. I found that a lot of people already had this issue and init-headphone package was the solution. You may find it here. <a href="https://github.com/Unrud/init-headphone" target="_blank" rel="noopener">https://github.com/Unrud/init-headphone</a> (for arch available at AUR)</li><li><strong>Keyboard backlight:</strong> this was the most obvious and although there was already a driver for clevo/linux, I didn’t found any compatible with the P65x. Fortunately in this repo i was able to find an request/issue suggesting the updates needed to make it compatible with this laptop model. Which worked! A few days latter the developer integrated the changes and now are available by default <a href="https://bitbucket.org/lynthium/clevo-xsm-wmi" target="_blank" rel="noopener">https://bitbucket.org/lynthium/clevo-xsm-wmi</a> (for arch available at AUR)</li><li><strong>Touchpad:</strong> this was the trickiest one and the main reason why I’ve decided to create this post. After large hours (days) of testing I found this post on askubuntu <a href="http://askubuntu.com/questions/525629/touchpad-is-not-recognized" target="_blank" rel="noopener">http://askubuntu.com/questions/525629/touchpad-is-not-recognized</a> which solved the problem. Basically it is related to the i8042 chipset and its (mis)configuration. By passing those flags to the kernel, It will ignore those configs and just turn It on. The Fn+F1 doesn’t work still though; I’ll probably investigate that latter.</li></ol><p>If you have any problems/suggestions, please leave comment below.</p><p>Good luck.</p><iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/236927412&amp;color=000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;p&gt;This is going to be a very atypical po
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://danfergo.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World!</title>
+    <link href="http://danfergo.github.io/2016/10/14/hello-world/"/>
+    <id>http://danfergo.github.io/2016/10/14/hello-world/</id>
+    <published>2016-10-14T03:07:00.000Z</published>
+    <updated>2020-05-30T21:21:47.809Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Since my teenager years I’ve been using the internet quite a lot and, with that, learning many on many different topics. Such was only possible because of the large amount of educational content provided by “anonymous” people through blogs, forums and video channels. Probably because of that, I always felt admired by this spirit of free and open sharing and mutual help.</p><p>From early on, I’ve found myself thinking about creating a blog or a video channel about “How to program” or something similar, that would allow me to give back what I’ve learned, but I always came across other great content providers that were making it much better than I would probably ever done.</p><p>Today with my studies course reaching its end, my master thesis arriving and my attention focusing on Computer Vision, Artificial Intelligence and Robotics I feel that the uniqueness of information that I would be capable to produce is greater and time is right to, once for all, create such web page. Also, this will be most valuable for me by serving as an alive showcase of what i’m doing and my interests as well as an extra motivation to learn and explore more. (You may find that this is not a     novelty on my life by reading my About page.)</p><p>So, in this blog you may expect to find content about AI, CV, Robotics and other computer related topics. These could appear in two types of posts: experiments/toy projects or supper summaries of “complex” subjects that I find possible to compress without lose to much. It is also possible that I explore here some of my philosophical ideas that often lie between natural intelligence/consciousnesses and the artificial counterpart. Finally, I may be sharing here some of the 5 minutes ideas that I have through the day and that I would like to work on if I had the number of lives of a cat.</p><p>That’s all; Thanks!<br>Until the next post.</p><iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/273662969&amp;color=000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;p&gt;Since my teenager years I’ve been usin
+      
+    
+    </summary>
+    
+    
+      <category term="meta" scheme="http://danfergo.github.io/tags/meta/"/>
+    
+  </entry>
+  
+</feed>
