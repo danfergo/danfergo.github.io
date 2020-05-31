@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://danfergo.github.io/"/>
-  <updated>2020-05-31T00:04:15.690Z</updated>
+  <updated>2020-05-31T00:12:42.780Z</updated>
   <id>http://danfergo.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://danfergo.github.io/2020/03/07/GelTip/"/>
     <id>http://danfergo.github.io/2020/03/07/GelTip/</id>
     <published>2020-03-07T20:08:00.000Z</published>
-    <updated>2020-05-31T00:04:15.690Z</updated>
+    <updated>2020-05-31T00:12:42.780Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><img width="50%" height="30rem" src="cover.jpg" title="The GelTip Optical Tactile Sensor" style="float:right;"> <p>Sensing contacts throughout the entire finger, is anhighly valuable capability for a robot to perform manipulationtasks,  as  vision-based  sensing  often  suffers  from  occlusions  orinaccurate  estimations.  Current  tactile  sensors  represent  oneof  two  compromises:  low  resolution  readings,  or  a  limitedcontact  measurement  area.  In  this  paper,  we  propose  a  finger-shaped  optical  sensor  that  has  the  shape  of  a  finger  and  cansense  contacts  on  any  location  of  its  surface.  Our  extensiveexperiments  show  that  the  sensor  can  effectively  localise  thesecontacts  at  different  locations  of  its  finger  body,  with  a  smalllocalisation error of approximately 5mm, on average, and under1mm in the best cases. Furthermore, our grasping experimentsdemonstrate  the  advantages  of  leveraging  touch  sensing  inmanipulation  tasks,  together  with  remote  sensing  capabilities,such  as  vision</p><div style="clear:both"> </div> <video width="600" height="300" controls>  <source src="exp_contact_detection.mp4" type="video/ogg">Your browser does not support the video tag.</video><video width="600" height="300" controls>  <source src="exp_world_blocks.mp4" type="video/ogg">Your browser does not support the video tag.</video><p><strong>This post will be updated soon with references for the extended publication, other materials (sensor STL files).</strong></p><h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Zhonglin Lin and Shan Luo, &quot;GelSight Simulation for Sim2Real Learning&quot;, ViTac Workshop ICRA 2020. <strong><a href="http://wordpress.csc.liv.ac.uk/smartlab/wp-content/uploads/sites/5/2020/05/ICRA2020ViTac_paper_5.pdf" target="_blank" rel="noopener">paper</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
     
@@ -36,9 +36,9 @@
     </summary>
     
     
-      <category term="touch" scheme="http://danfergo.github.io/tags/touch/"/>
-    
       <category term="featured" scheme="http://danfergo.github.io/tags/featured/"/>
+    
+      <category term="touch" scheme="http://danfergo.github.io/tags/touch/"/>
     
   </entry>
   
@@ -47,7 +47,7 @@
     <link href="http://danfergo.github.io/2019/05/20/GelSight-Simulation/"/>
     <id>http://danfergo.github.io/2019/05/20/GelSight-Simulation/</id>
     <published>2019-05-20T22:55:00.000Z</published>
-    <updated>2020-05-31T00:03:44.722Z</updated>
+    <updated>2020-05-31T00:12:42.772Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Grasping and manipulation of objects are commonboth in domestic and industrial environments. Recent worksexploring learning based solutions have shown promising re-sults  on  robotic  manipulation  tasks.  One  efficient  approachfor training such learning agents is to train them within asimulated environment, followed by their deployment on realrobots (Sim2Real). Most current works leverage camera vision tofacilitate such manipulation tasks. However, camera vision mightbe significantly occluded by robot hands during the manipulation.Tactile sensing is another important sensing modality that offerscomplementary  information  to  vision  and  can  make  up  theinformation loss caused by the occlusion. However, the use oftactile sensing is restricted in theSim2Realresearch due tono simulated tactile sensors available in the current simulationplatforms. To mitigate the gap, we introduce a novel approach forsimulating a GelSight tactile sensor in the commonly used Gazebosimulator. Similar to the real GelSight sensor, the simulatedsensor can produce high-resolution images by an optical sensorfrom the interaction between the touched object and an opaquesoft membrane. It can indirectly sense forces, geometry, texture and other properties of the object and enables the research ofSim2Real learning with tactile sensing. Preliminary experiment results have shown that the simulated sensor could generate realistic outputs similar to ones captured by a real GelSight sensor. </p><img src="/2019/05/20/GelSight-Simulation/envs.png"><img src="/2019/05/20/GelSight-Simulation/samples.png"><p><strong>This post will be updated soon with references for the conference publication, source code (ROS Packages &amp; Simulation for Gazebo) and other materials (STL files).</strong></p><h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Achu Wilson and Shan Luo, &quot;GelSight Simulation for Sim2Real Learning&quot;, ViTac Workshop ICRA 2019. <strong><a href="http://wordpress.csc.liv.ac.uk/smartlab/wp-content/uploads/sites/5/2019/06/ICRA2019ViTac_paper_8.pdf" target="_blank" rel="noopener">paper</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
     
@@ -61,9 +61,9 @@
     </summary>
     
     
-      <category term="touch" scheme="http://danfergo.github.io/tags/touch/"/>
-    
       <category term="featured" scheme="http://danfergo.github.io/tags/featured/"/>
+    
+      <category term="touch" scheme="http://danfergo.github.io/tags/touch/"/>
     
   </entry>
   
@@ -72,7 +72,7 @@
     <link href="http://danfergo.github.io/2019/03/02/garmnet/"/>
     <id>http://danfergo.github.io/2019/03/02/garmnet/</id>
     <published>2019-03-02T22:29:00.000Z</published>
-    <updated>2020-05-30T23:50:23.757Z</updated>
+    <updated>2020-05-31T00:12:42.776Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Developing autonomous assistants to help with domestic tasks is a vital topic in robotics research. Among these tasks, garment folding is one of them that is still far from being achieved mainly due to the large number of possible configurations that a crumpled piece of clothing may exhibit. Research has been done on either estimating the pose of the garment as a whole or detecting the landmarks for grasping separately. However, such works constrain the capability of the robots to perceive the states of the garment by limiting the representations for one single task. In this paper, we propose a novel end-to-end deep learning model named GarmNet that is able to simultaneously localize the garment and detect landmarks for grasping. The localization of the garment represents the global information for recognising the category of the garment, whereas the detection of landmarks can facilitate sub-sequent grasping actions. We train and evaluate our proposed GarmNet model using the CloPeMa Garment dataset that contains 3,330 images of different garment types in different poses. The experiments show that the inclusion of landmark detection (GarmNet-B) can largely improve the garment localization, with an error rate of 24.7% lower. Solutions as ours are important for robotics applications, as these offer scalable to many classes, memory and processing efficient solutions.</p><img src="/2019/03/02/garmnet/img_spacial_constraint.png" title="Spatial Constraint"><h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">GarmNet: Improving Global with Local Perception for Robotic Laundry Folding, TAROS 2019, <strong><a href="%5Bhttps://arxiv.org/abs/1907.00408%5D">arxiv</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Detecting garment and its landmarks MSc dissertation, 2017-07-18. <strong><a href="https://hdl.handle.net/10216/107701" target="_blank" rel="noopener">UP Open Repository</a></strong><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
     

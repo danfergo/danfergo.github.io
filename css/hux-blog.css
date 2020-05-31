@@ -607,11 +607,11 @@ pre code {
 @media only screen and (max-width: 768px) {
     .index.post-preview {
         display: block;
-        padding-bottom: 40%;
     }
 
     .index.post-preview > .img-preview a {
         margin: 2rem 0 0 0;
+        padding-bottom: 70%;
     }
 
 }
