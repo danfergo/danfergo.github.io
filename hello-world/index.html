@@ -6,18 +6,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This is going to be a very atypical post on this blog but, because I spent almost two weeks to figure it out I’ll leave it here. These configs will probably change with time and so, I’ll be updatin...">
+    <meta name="description" content="Since my teenager years I’ve been using the internet quite a lot and, with that, learning many on many different topics. Such was only possible because of the large amount of educational content pr...">
     <meta name="keyword" content="danfergo, programming, code">
     <link rel="shortcut icon" href="/img/favicon.png">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
     <title>
         
-          Clevo P65xRP / Inphtech P600-G on Linux - Compulsive curiosity
+          Hello World! - Compulsive curiosity
         
     </title>
 
-    <link rel="canonical" href="http://danfergo.github.io/2016/10/17/clevo-p65xrp-inphtech-p600-g-on-linux/">
+    <link rel="canonical" href="http://danfergo.github.io/hello-world/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -179,14 +179,14 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#linux" title="linux">linux</a>
+                          <a class="tag" href="/tags/#meta" title="meta">meta</a>
                         
                     </div>
-                    <h1>Clevo P65xRP / Inphtech P600-G on Linux</h1>
-                    <h2 class="subheading"></h2>
+                    <h1>Hello World!</h1>
+                    <h2 class="subheading">What should you and I expect from this blog?</h2>
                     <span class="meta">
                         <!--Posted by danfergo on -->
-                        October 17, 2016
+                        October 14, 2016
                     </span>
                 </div>
             </div>
@@ -207,18 +207,13 @@
                 col-xs-12
                 post-container">
 
-                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>This is going to be a very atypical post on this blog but, because I spent almost two weeks to figure it out I’ll leave it here. These configs will probably change with time and so, I’ll be updating this post in a logbook manner.</p>
-<img src="/2016/10/17/clevo-p65xrp-inphtech-p600-g-on-linux/clevo-linux.jpg" title="Antergos Gnome on my Clevo P65x">
-<h4 id="16th-october-2016"><a href="#16th-october-2016" class="headerlink" title="16th october 2016"></a>16th october 2016</h4><p>I’m running Antergos with Gnome desktop environment and 4.7.6-1-ARCH kernel on UEFI, gpt/lvm partitioning and systemd-boot loader.</p>
-<ol>
-<li><strong>Headphone jack:</strong> when I closed the lead, suspended or hibernated the computer the headphone jack would stop working. I found that a lot of people already had this issue and init-headphone package was the solution. You may find it here. <a href="https://github.com/Unrud/init-headphone" target="_blank" rel="noopener">https://github.com/Unrud/init-headphone</a> (for arch available at AUR)</li>
-<li><strong>Keyboard backlight:</strong> this was the most obvious and although there was already a driver for clevo/linux, I didn’t found any compatible with the P65x. Fortunately in this repo i was able to find an request/issue suggesting the updates needed to make it compatible with this laptop model. Which worked! A few days latter the developer integrated the changes and now are available by default <a href="https://bitbucket.org/lynthium/clevo-xsm-wmi" target="_blank" rel="noopener">https://bitbucket.org/lynthium/clevo-xsm-wmi</a> (for arch available at AUR)</li>
-<li><strong>Touchpad:</strong> this was the trickiest one and the main reason why I’ve decided to create this post. After large hours (days) of testing I found this post on askubuntu <a href="http://askubuntu.com/questions/525629/touchpad-is-not-recognized" target="_blank" rel="noopener">http://askubuntu.com/questions/525629/touchpad-is-not-recognized</a> which solved the problem. Basically it is related to the i8042 chipset and its (mis)configuration. By passing those flags to the kernel, It will ignore those configs and just turn It on. The Fn+F1 doesn’t work still though; I’ll probably investigate that latter.</li>
-</ol>
-<p>If you have any problems/suggestions, please leave comment below.</p>
-<p>Good luck.</p>
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Since my teenager years I’ve been using the internet quite a lot and, with that, learning many on many different topics. Such was only possible because of the large amount of educational content provided by “anonymous” people through blogs, forums and video channels. Probably because of that, I always felt admired by this spirit of free and open sharing and mutual help.</p>
+<p>From early on, I’ve found myself thinking about creating a blog or a video channel about “How to program” or something similar, that would allow me to give back what I’ve learned, but I always came across other great content providers that were making it much better than I would probably ever done.</p>
+<p>Today with my studies course reaching its end, my master thesis arriving and my attention focusing on Computer Vision, Artificial Intelligence and Robotics I feel that the uniqueness of information that I would be capable to produce is greater and time is right to, once for all, create such web page. Also, this will be most valuable for me by serving as an alive showcase of what i’m doing and my interests as well as an extra motivation to learn and explore more. (You may find that this is not a     novelty on my life by reading my About page.)</p>
+<p>So, in this blog you may expect to find content about AI, CV, Robotics and other computer related topics. These could appear in two types of posts: experiments/toy projects or supper summaries of “complex” subjects that I find possible to compress without lose to much. It is also possible that I explore here some of my philosophical ideas that often lie between natural intelligence/consciousnesses and the artificial counterpart. Finally, I may be sharing here some of the 5 minutes ideas that I have through the day and that I would like to work on if I had the number of lives of a cat.</p>
+<p>That’s all; Thanks!<br>Until the next post.</p>
 
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/236927412&amp;color=000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/273662969&amp;color=000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
 
 
                 <hr>
@@ -228,13 +223,9 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2019/03/02/garmnet/" data-toggle="tooltip" data-placement="top" title="GarmNet: Improving Global with Local Perception for Robotic Laundry Folding">&larr; Previous Post</a>
+                            <a href="/clevo-p65xrp-inphtech-p600-g-on-linux/" data-toggle="tooltip" data-placement="top" title="Clevo P65xRP / Inphtech P600-G on Linux">&larr; Previous Post</a>
                         </li>
                     
-                    
-                        <li class="next">
-                            <a href="/2016/10/14/hello-world/" data-toggle="tooltip" data-placement="top" title="Hello World!">Next Post &rarr;</a>
-                        </li>
                     
                 </ul>
 
@@ -269,7 +260,7 @@
                     <!--<h5><a href="/tags/">FEATURED TAGS</a></h5>-->
                     <!--<div class="tags">-->
                        <!---->
-                          <!--<a class="tag" href="/tags/#linux" title="linux">linux</a>-->
+                          <!--<a class="tag" href="/tags/#meta" title="meta">meta</a>-->
                         <!---->
                     <!--</div>-->
                 <!--</section>-->
@@ -305,8 +296,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "danfergo";
-    var disqus_identifier = "http://danfergo.github.io/2016/10/17/clevo-p65xrp-inphtech-p600-g-on-linux/";
-    var disqus_url = "http://danfergo.github.io/2016/10/17/clevo-p65xrp-inphtech-p600-g-on-linux/";
+    var disqus_identifier = "http://danfergo.github.io/hello-world/";
+    var disqus_url = "http://danfergo.github.io/hello-world/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
