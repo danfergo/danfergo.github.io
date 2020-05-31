@@ -1,5 +1,6 @@
 title: Hello World!
 subtitle: What should you and I expect from this blog?
+alias: 2016/10/14/hello-world/index.html
 tags:
   - meta
 categories: []

@@ -1,5 +1,4 @@
 title: 'GarmNet: Improving Global with Local Perception for Robotic Laundry Folding'
-alias: garmnet/index.html
 author: danfergo
 tags:
   - featured

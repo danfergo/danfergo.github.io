@@ -1,5 +1,4 @@
 title: GelSight Simulation for Sim2Real Learning
-alias: gelsight-simulation/index.html
 author: danfergo
 tags:
   - featured

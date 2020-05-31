@@ -1,5 +1,4 @@
 title: 'GelTip: A Finger-shaped Optical Tactile Sensor for Robotic Manipulation'
-alias: geltip/index.html
 author: danfergo
 tags:
   - touch

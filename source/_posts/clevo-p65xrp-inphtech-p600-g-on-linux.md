@@ -1,4 +1,5 @@
 title: Clevo P65xRP / Inphtech P600-G on Linux
+alias: 2016/10/17/clevo-p65xrp-inphtech-p600-g-on-linux/index.html
 author: danfergo
 tags:
   - linux
