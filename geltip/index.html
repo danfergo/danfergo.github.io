@@ -6,10 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="
- 
-
-Sensing contacts throughout the entire finger, is anhighly valuable capability for a robot to perform manipulationtasks,  as  vision-based  sensing  often  suffers  from  occlusions  orinaccura...">
+    <meta name="description" content="AbstractSensing contacts throughout the entire finger is an highly valuable capability for a robots (and humans) when carrying manipulation tasks,  as  vision-based  sensing  often  suffers  from  ...">
     <meta name="keyword" content="danfergo, programming, code">
     <link rel="shortcut icon" href="/img/favicon.png">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
@@ -106,14 +103,14 @@ Sensing contacts throughout the entire finger, is anhighly valuable capability f
 
                     
                     <li>
-                        <a href="/tags/">Tags</a>
+                        <a href="/about/">About</a>
                     </li>
                     
                     
 
                     
                     <li>
-                        <a href="/about/">About</a>
+                        <a href="/tags/">Tags</a>
                     </li>
                     
                     
@@ -210,24 +207,49 @@ Sensing contacts throughout the entire finger, is anhighly valuable capability f
                 col-xs-12
                 post-container">
 
-                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">
-<img width="50%" height="30rem" src="cover.jpg" title="The GelTip Optical Tactile Sensor" style="float:right;"> 
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Sensing contacts throughout the entire finger is an highly valuable capability for a robots (and humans) when carrying manipulation tasks,  as  vision-based  sensing  often  suffers  from  occlusions  or inaccurate  estimations. Current tactile sensors suffer from one of two drawbacks: low resolution readings, or a limited contact measurement area. We propose a finger-shaped optical sensor that has the shape of a finger and can sense contacts on any location of its surface. Our experiments show that the sensor can effectively capture such contacts throughout its surface.</p>
 
-<p>Sensing contacts throughout the entire finger, is anhighly valuable capability for a robot to perform manipulationtasks,  as  vision-based  sensing  often  suffers  from  occlusions  orinaccurate  estimations.  Current  tactile  sensors  represent  oneof  two  compromises:  low  resolution  readings,  or  a  limitedcontact  measurement  area.  In  this  paper,  we  propose  a  finger-shaped  optical  sensor  that  has  the  shape  of  a  finger  and  cansense  contacts  on  any  location  of  its  surface.  Our  extensiveexperiments  show  that  the  sensor  can  effectively  localise  thesecontacts  at  different  locations  of  its  finger  body,  with  a  smalllocalisation error of approximately 5mm, on average, and under1mm in the best cases. Furthermore, our grasping experimentsdemonstrate  the  advantages  of  leveraging  touch  sensing  inmanipulation  tasks,  together  with  remote  sensing  capabilities,such  as  vision</p>
+<img width="100%" src="cover.jpg" title="The GelTip Optical Tactile Sensor" style="max-width:50rem; margin:3rem auto 1rem;"> 
 
-<div style="clear:both"> </div> 
-
+<p>In figure above a plastic strawberry is being grasped by a parallel gripper equipped with two of the proposed GelTip sensors, with the corresponding imprint highlighted in the obtained tactile image (in gray-scale). As it can be seen, the sensor clearly capture the strawberry texture.</p>
+<h2 id="Materials"><a href="#Materials" class="headerlink" title="Materials"></a>Materials</h2><p>In the table bellow, the necessary STL files for 3D printing the GelTip sensor are provided. STL files are also provided for printing the 5 objects dataset and support mount, used in the Contact Localisation experiment. Please refer to the paper for more instructions on how to build the sensor or experiments details.</p>
+<table>
+<thead>
+<tr>
+<th>DESCRIPTION</th>
+<th style="text-align:center">FILE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3D printable (STL) files of the GelSight sensor and mold.</strong></td>
+<td style="text-align:center"><strong> <a href="geltip2020_parts.zip">geltip2020_parts.zip</a> </strong></td>
+</tr>
+<tr>
+<td><strong>3D printable (STL) files of the objects and mount used in the contact localisation experiment.</strong></td>
+<td style="text-align:center"><strong> <a href="objects_dataset.zip">objects_dataset.zip</a> </strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Sensor-projective-model"><a href="#Sensor-projective-model" class="headerlink" title="Sensor projective model"></a>Sensor projective model</h2><p>We derive the protective function that maps pixels in the image space into points on the sensor surface, as illustrated in the picture below. The two shown rays intersect the sensor surface in the spherical region, in red, and the cylindrical region, in blue; and each ray intersects three relevant points: the frame of reference origin, a point in the sensor surface and the corresponding projected point in the image plane.</p>
 
 <video width="600" height="300" controls>
-  <source src="exp_contact_detection.mp4" type="video/ogg">
+  <source src="projective_model.mp4" type="video/mp4">
 Your browser does not support the video tag.</video>
 
+<h2 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h2>
+<video width="600" height="300" controls>
+  <source src="exp_contact_detection.mp4" type="video/mp4">
+Your browser does not support the video tag.</video>
+
+<p>Two GelTip sensors are installed on a robotic actuator and a 3D printed mount that holds a small 3D printed object placed on top of a wooden block. The actuator moves in small increments and collects tactile images annotated with the known contact positions. We then implement an image-subtraction based algorithm to localise such contacts in image space. Then, using the projective model the localised contact points are projected into world coordinates. The errors between the true and predicted positions, measured as the Euclidean distance, are then assessed.</p>
 
 <video width="600" height="300" controls>
-  <source src="exp_world_blocks.mp4" type="video/ogg">
+  <source src="exp_world_blocks.mp4" type="video/mp4">
 Your browser does not support the video tag.</video>
 
-<p><strong>This post will be updated soon with references for the extended publication, other materials (sensor STL files).</strong></p>
+<p>To demonstrate the potential of all-around sensing, in the context of manipulation/grasping tasks a Blocks World is carried. The robot actuator moves row by row, attempting to grasp each block. Two different policies are analysed: one in which the robot grasps each block randomly, and another in which touch feedback is used to adjust the initially random grasp (the video above shows the latter). The experiment shows that when using touch feedback the robot grasps all the blocks successfully, even with the initial uncertainty.</p>
+<p>For more information about the GelTip sensor, its fabrication process, and the executed experiments, checkout the papers referenced bellow.</p>
 <h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Zhonglin Lin and Shan Luo, &quot;GelSight Simulation for Sim2Real Learning&quot;, ViTac Workshop ICRA 2020. <strong><a href="http://wordpress.csc.liv.ac.uk/smartlab/wp-content/uploads/sites/5/2020/05/ICRA2020ViTac_paper_5.pdf" target="_blank" rel="noopener">paper</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li></ol></div></div>
 
                 <hr>
@@ -387,7 +409,7 @@ Your browser does not support the video tag.</video>
 </ul>
                 </div>
                 <p class="copyright text-muted">
-                     &copy; Compulsive curiosity 2020 
+                    &copy; Compulsive curiosity 2020
                     <br>
                     Theme by <a href="http://huangxuan.me">Hux</a>
                     .
@@ -413,12 +435,16 @@ Your browser does not support the video tag.</video>
 <!-- async load function -->
 <script>
     function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
     }
 </script>
 
@@ -443,23 +469,23 @@ Your browser does not support the video tag.</video>
 
 <!-- jquery.tagcloud.js -->
 <!--<script>-->
-    <!--// only load tagcloud.js in tag.html-->
-    <!--if($('#tag_cloud').length !== 0){-->
-        <!--async("http://danfergo.github.io/js/jquery.tagcloud.js",function(){-->
-            <!--$.fn.tagcloud.defaults = {-->
-                <!--//size: {start: 1, end: 1, unit: 'em'},-->
-                <!--color: {start: '#bbbbee', end: '#0085a1'},-->
-            <!--};-->
-            <!--$('#tag_cloud a').tagcloud();-->
-        <!--})-->
-    <!--}-->
+<!--// only load tagcloud.js in tag.html-->
+<!--if($('#tag_cloud').length !== 0){-->
+<!--async("http://danfergo.github.io/js/jquery.tagcloud.js",function(){-->
+<!--$.fn.tagcloud.defaults = {-->
+<!--//size: {start: 1, end: 1, unit: 'em'},-->
+<!--color: {start: '#bbbbee', end: '#0085a1'},-->
+<!--};-->
+<!--$('#tag_cloud a').tagcloud();-->
+<!--})-->
+<!--}-->
 <!--</script>-->
 
 <!--fastClick.js -->
 <script>
-    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
         var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
+        if ($nav) FastClick.attach($nav);
     })
 </script>
 
@@ -467,16 +493,51 @@ Your browser does not support the video tag.</video>
 <!-- Google Analytics -->
 
 
-<script>
-    // Originial
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script>
+        // Originial
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-85798112-1', 'auto');
-    ga('send', 'pageview');
-</script>
+        ga('create', 'UA-85798112-1', 'auto');
+        ga('send', 'pageview');
+
+        $('body').on('click', 'a', function (e) {
+            var _ = $(this);
+            if(_[0].pathname.indexOf('.') > -1 && _[0].hostname === window.location.hostname){
+
+                if (_.data('prevented') === 1)
+                {
+                    _.removeData("prevented");
+                    return true;
+                }
+
+                e.preventDefault();
+                _.data('prevented', 1);
+                window.__gacb = function () {
+                    _[0].click();
+                };
+                console.log('Download:', _[0].pathname);
+                ga('send', 'pageview', {
+                    'page': _[0].pathname,
+                    'hitCallback': function() {
+                        window.__gacb();
+                    }
+                })
+                return false;
+            }
+        });
+
+
+    </script>
 
 
 
