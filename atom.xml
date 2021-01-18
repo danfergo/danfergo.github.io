@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Compulsive curiosity</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://danfergo.github.io/"/>
+  <updated>2021-01-18T17:02:03.722Z</updated>
+  <id>http://danfergo.github.io/</id>
+  
+  <author>
+    <name>danfergo</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GelTip: A Finger-shaped Optical Tactile Sensor for Robotic Manipulation</title>
+    <link href="http://danfergo.github.io/geltip/"/>
+    <id>http://danfergo.github.io/geltip/</id>
+    <published>2020-03-07T20:08:00.000Z</published>
+    <updated>2021-01-18T17:02:03.722Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Sensing contacts throughout the entire finger is an highly valuable capability for a robots (and humans) when carrying manipulation tasks,  as  vision-based  sensing  often  suffers  from  occlusions  or inaccurate  estimations. Current tactile sensors suffer from one of two drawbacks: low resolution readings, or a limited contact measurement area. We propose a finger-shaped optical sensor that has the shape of a finger and can sense contacts on any location of its surface. Our experiments show that the sensor can effectively capture such contacts throughout its surface.</p><img width="100%" src="cover.jpg" title="The GelTip Optical Tactile Sensor" style="max-width:50rem; margin:3rem auto 1rem;"> <p>In figure above a plastic strawberry is being grasped by a parallel gripper equipped with two of the proposed GelTip sensors, with the corresponding imprint highlighted in the obtained tactile image (in gray-scale). As it can be seen, the sensor clearly capture the strawberry texture.</p><h2 id="Materials"><a href="#Materials" class="headerlink" title="Materials"></a>Materials</h2><p>In the table bellow, the necessary STL files for 3D printing the GelTip sensor are provided. STL files are also provided for printing the 5 objects dataset and support mount, used in the Contact Localisation experiment. Please refer to the paper for more instructions on how to build the sensor or experiments details.</p><table><thead><tr><th>DESCRIPTION</th><th style="text-align:center">FILE</th></tr></thead><tbody><tr><td><strong>3D printable (STL) files of the GelSight sensor and mold.</strong></td><td style="text-align:center"><strong> <a href="geltip2020_parts.zip">geltip2020_parts.zip</a> </strong></td></tr><tr><td><strong>3D printable (STL) files of the objects and mount used in the contact localisation experiment.</strong></td><td style="text-align:center"><strong> <a href="objects_dataset.zip">objects_dataset.zip</a> </strong></td></tr></tbody></table><h2 id="Sensor-projective-model"><a href="#Sensor-projective-model" class="headerlink" title="Sensor projective model"></a>Sensor projective model</h2><p>We derive the protective function that maps pixels in the image space into points on the sensor surface, as illustrated in the picture below. The two shown rays intersect the sensor surface in the spherical region, in red, and the cylindrical region, in blue; and each ray intersects three relevant points: the frame of reference origin, a point in the sensor surface and the corresponding projected point in the image plane.</p><video width="600" height="300" controls>  <source src="projective_model.mp4" type="video/mp4">Your browser does not support the video tag.</video><h2 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h2><video width="600" height="300" controls>  <source src="exp_contact_detection.mp4" type="video/mp4">Your browser does not support the video tag.</video><p>Two GelTip sensors are installed on a robotic actuator and a 3D printed mount that holds a small 3D printed object placed on top of a wooden block. The actuator moves in small increments and collects tactile images annotated with the known contact positions. We then implement an image-subtraction based algorithm to localise such contacts in image space. Then, using the projective model the localised contact points are projected into world coordinates. The errors between the true and predicted positions, measured as the Euclidean distance, are then assessed.</p><video width="600" height="300" controls>  <source src="exp_world_blocks.mp4" type="video/mp4">Your browser does not support the video tag.</video><p>To demonstrate the potential of all-around sensing, in the context of manipulation/grasping tasks a Blocks World is carried. The robot actuator moves row by row, attempting to grasp each block. Two different policies are analysed: one in which the robot grasps each block randomly, and another in which touch feedback is used to adjust the initially random grasp (the video above shows the latter). The experiment shows that when using touch feedback the robot grasps all the blocks successfully, even with the initial uncertainty.</p><p>For more information about the GelTip sensor, its fabrication process, and the executed experiments, checkout the papers referenced bellow.</p><h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Zhonglin Lin and Shan Luo, &quot;Blocks World of Touch: Exploiting the advantages of all-around finger sensing in robot grasping&quot;, Frontiers in Robotics and AI 7 (2020). <strong><a href="http://doi.org/10.3389/frobt.2020.541661">10.3389/frobt.2020.541661</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Zhonglin Lin and Shan Luo, &quot;GelSight Simulation for Sim2Real Learning&quot;, ViTac Workshop ICRA 2020. <strong><a href="http://wordpress.csc.liv.ac.uk/smartlab/wp-content/uploads/sites/5/2020/05/ICRA2020ViTac_paper_5.pdf">paper</a></strong><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;h2 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="featured" scheme="http://danfergo.github.io/tags/featured/"/>
+    
+      <category term="touch" scheme="http://danfergo.github.io/tags/touch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GelSight Simulation for Sim2Real Learning</title>
+    <link href="http://danfergo.github.io/gelsight-simulation/"/>
+    <id>http://danfergo.github.io/gelsight-simulation/</id>
+    <published>2019-05-20T22:55:00.000Z</published>
+    <updated>2021-01-18T17:37:14.093Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><strong> this page is being updated! </strong></p><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Most current works in <em>Sim2Real</em> learning for robotic manipulation tasks leverage camera vision that may be significantly occluded by robot hands during the manipulation. Tactile sensing offers complementary information to vision and can compensate for the information loss caused by the occlusion. However, the use of tactile sensing is restricted in the <em>Sim2Real</em> research due to no simulated tactile sensors being available. To mitigate the gap, we introduce a novel approach for simulating a GelSight tactile sensor in the commonly used Gazebo simulator. Similar to the real GelSight sensor, the simulated sensor can produce high-resolution images by an optical sensor from the interaction between the touched object and an opaque soft membrane. It can indirectly sense forces, geometry, texture and other properties of the object and enables <em>Sim2Real</em> learning with tactile sensing. Preliminary experimental results have shown that the simulated sensor could generate realistic outputs similar to the ones captured by a real GelSight sensor. </p><img width="100%" src="samples_qualitative.jpg" title="Data collection using an FDM 3D Printer" margin:3rem auto 1rem;"> <p><strong>Figure 1</strong>, Samples collected using a GelSight 2014 sensor (top row) and the corresponding simulations: using<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Daniel Fernandes Gomes, Achu Wilson and Shan Luo, &#65282;GelSight Simulation for Sim2Real Learning&#65282;, ViTac Workshop ICRA 2019. **[paper]()**">[2]</span></a></sup> (2nd row), the <strong><em>Single Gaussian</em></strong> (3rd row) and the <strong><em>Difference of Gaussians</em></strong> (4th row) for the elastomer heightmap approximation, for a GelSight 2017 sensor (last row). As seen in the listed tactile images, the generated samples look realistic and quite similar to the real ones, being able to replicate internal light configurations of different sensors. </p><h2 id="Materials"><a href="#Materials" class="headerlink" title="Materials"></a>Materials</h2><p>In the table bellow, the necessary STL files for 3D printing the GelTip sensor are provided. STL files are also provided for printing the 5 objects dataset and support mount, used in the Contact Localisation experiment. Please refer to the paper for more instructions on how to build the sensor or experiments details.</p><table><thead><tr><th>DESCRIPTION</th><th style="text-align:center">FILE</th></tr></thead><tbody><tr><td><strong>Source-code</strong>: <em>ROS packages + Experiments scripts</em></td><td style="text-align:center"><strong> <a href="https://github.com/danfergo/gelsight_simulation">GitHub</a> </strong></td></tr><tr><td><strong>Unaligned data</strong>: <em>real RGB and virtual depth maps</em></td><td style="text-align:center"><strong> <a href="d_maps.zip">unaligned.zip</a> </strong></td></tr><tr><td><strong>Aligned data</strong>: <em>per-object, real RGB and virtual depth maps + RGB (DoG)</em></td><td style="text-align:center"><strong> <a href="d_maps.zip">aligned.zip</a> </strong></td></tr><tr><td><strong>3D printable STL files</strong>: <em>object set and mount used experiments</em></td><td style="text-align:center"><strong> <a href="object_set.zip">object_set.zip</a>  </strong></td></tr></tbody></table><h2 id="ViTac-workshop"><a href="#ViTac-workshop" class="headerlink" title="ViTac workshop"></a>ViTac workshop</h2><p>The proposed GelSight simulation method was firstly for the <a href="http://wordpress.csc.liv.ac.uk/smartlab/icra-2019-vitac-workshop/">2019 ICRA ViTac Worshop</a>. Given the  <a href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=1347008206220158376">interest</a> shown by the community, we revised and extend the work in a new publication<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Daniel Fernandes Gomes, Paolo Paoletti and Shan Luo, &#65282;Generation of GelSight Tactile Images for Sim2Real Learning&#65282;, Arxiv preprint. **[paper (soon)](http://wordpress.csc.liv.ac.uk/smartlab/wp-content/uploads/sites/5/2019/06/ICRA2019ViTac_paper_8.pdf)**">[1]</span></a></sup>.</p><img src="/gelsight-simulation/vitac2019workshop.jpg" class=""><h2 id="Experimental-Setup"><a href="#Experimental-Setup" class="headerlink" title="Experimental Setup"></a>Experimental Setup</h2><p>To produce the necessary real reference dataset, a GelSight sensor is mounted onto a Fused Deposition Modeling (FDM) 3D printer A30 from Geeetech. A set of objects with different shapes on the top is designed and 3D printed using the Form 2 Stereolithography (SLA) 3D printer. A Virtual World comprised of a FDM printer, a GelSight sensor and a set of virtual objects, is also set up. Identical real and virtual datasets are then collected.</p><video width="600" height="300" controls>  <source src="data_collection.webm" type="video/mp4">Your browser does not support the video tag.</video><img width="100%" src="object_set.jpg" title="Data collection using an FDM 3D Printer" style="max-width:50rem"> <h2 id="Sim2Real-transfer-learning"><a href="#Sim2Real-transfer-learning" class="headerlink" title="Sim2Real transfer learning"></a>Sim2Real transfer learning</h2><img src="/gelsight-simulation/texture_augmented.jpg" class=""><h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Paolo Paoletti and Shan Luo, ＂Generation of GelSight Tactile Images for Sim2Real Learning＂, Arxiv preprint. <strong><a href="http://wordpress.csc.liv.ac.uk/smartlab/wp-content/uploads/sites/5/2019/06/ICRA2019ViTac_paper_8.pdf">paper (soon)</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Achu Wilson and Shan Luo, ＂GelSight Simulation for Sim2Real Learning＂, ViTac Workshop ICRA 2019. <strong><a href="">paper</a></strong><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;p&gt;&lt;strong&gt; this page is being updated! &lt;
+      
+    
+    </summary>
+    
+    
+      <category term="featured" scheme="http://danfergo.github.io/tags/featured/"/>
+    
+      <category term="touch" scheme="http://danfergo.github.io/tags/touch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GarmNet: Improving Global with Local Perception for Robotic Laundry Folding</title>
+    <link href="http://danfergo.github.io/garmnet/"/>
+    <id>http://danfergo.github.io/garmnet/</id>
+    <published>2019-03-02T22:29:00.000Z</published>
+    <updated>2020-05-31T00:20:46.840Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Developing autonomous assistants to help with domestic tasks is a vital topic in robotics research. Among these tasks, garment folding is one of them that is still far from being achieved mainly due to the large number of possible configurations that a crumpled piece of clothing may exhibit. Research has been done on either estimating the pose of the garment as a whole or detecting the landmarks for grasping separately. However, such works constrain the capability of the robots to perceive the states of the garment by limiting the representations for one single task. In this paper, we propose a novel end-to-end deep learning model named GarmNet that is able to simultaneously localize the garment and detect landmarks for grasping. The localization of the garment represents the global information for recognising the category of the garment, whereas the detection of landmarks can facilitate sub-sequent grasping actions. We train and evaluate our proposed GarmNet model using the CloPeMa Garment dataset that contains 3,330 images of different garment types in different poses. The experiments show that the inclusion of landmark detection (GarmNet-B) can largely improve the garment localization, with an error rate of 24.7% lower. Solutions as ours are important for robotics applications, as these offer scalable to many classes, memory and processing efficient solutions.</p><img src="/garmnet/img_spacial_constraint.png" class="" title="Spatial Constraint"><h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">GarmNet: Improving Global with Local Perception for Robotic Laundry Folding, TAROS 2019, <strong><a href="%5Bhttps://arxiv.org/abs/1907.00408%5D">arxiv</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Detecting garment and its landmarks MSc dissertation, 2017-07-18. <strong><a href="https://hdl.handle.net/10216/107701">UP Open Repository</a></strong><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;p&gt;Developing autonomous assistants to he
+      
+    
+    </summary>
+    
+    
+      <category term="featured" scheme="http://danfergo.github.io/tags/featured/"/>
+    
+      <category term="vision" scheme="http://danfergo.github.io/tags/vision/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Clevo P65xRP / Inphtech P600-G on Linux</title>
+    <link href="http://danfergo.github.io/clevo-p65xrp-inphtech-p600-g-on-linux/"/>
+    <id>http://danfergo.github.io/clevo-p65xrp-inphtech-p600-g-on-linux/</id>
+    <published>2016-10-17T00:00:00.000Z</published>
+    <updated>2020-05-31T00:26:24.851Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>This is going to be a very atypical post on this blog but, because I spent almost two weeks to figure it out I’ll leave it here. These configs will probably change with time and so, I’ll be updating this post in a logbook manner.</p><img src="/clevo-p65xrp-inphtech-p600-g-on-linux/clevo-linux.jpg" class="" title="Antergos Gnome on my Clevo P65x"><h4 id="16th-october-2016"><a href="#16th-october-2016" class="headerlink" title="16th october 2016"></a>16th october 2016</h4><p>I’m running Antergos with Gnome desktop environment and 4.7.6-1-ARCH kernel on UEFI, gpt/lvm partitioning and systemd-boot loader.</p><ol><li><strong>Headphone jack:</strong> when I closed the lead, suspended or hibernated the computer the headphone jack would stop working. I found that a lot of people already had this issue and init-headphone package was the solution. You may find it here. <a href="https://github.com/Unrud/init-headphone">https://github.com/Unrud/init-headphone</a> (for arch available at AUR)</li><li><strong>Keyboard backlight:</strong> this was the most obvious and although there was already a driver for clevo/linux, I didn’t found any compatible with the P65x. Fortunately in this repo i was able to find an request/issue suggesting the updates needed to make it compatible with this laptop model. Which worked! A few days latter the developer integrated the changes and now are available by default <a href="https://bitbucket.org/lynthium/clevo-xsm-wmi">https://bitbucket.org/lynthium/clevo-xsm-wmi</a> (for arch available at AUR)</li><li><strong>Touchpad:</strong> this was the trickiest one and the main reason why I’ve decided to create this post. After large hours (days) of testing I found this post on askubuntu <a href="http://askubuntu.com/questions/525629/touchpad-is-not-recognized">http://askubuntu.com/questions/525629/touchpad-is-not-recognized</a> which solved the problem. Basically it is related to the i8042 chipset and its (mis)configuration. By passing those flags to the kernel, It will ignore those configs and just turn It on. The Fn+F1 doesn’t work still though; I’ll probably investigate that latter.</li></ol><p>If you have any problems/suggestions, please leave comment below.</p><p>Good luck.</p><iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/236927412&amp;color=000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;p&gt;This is going to be a very atypical po
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://danfergo.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World!</title>
+    <link href="http://danfergo.github.io/hello-world/"/>
+    <id>http://danfergo.github.io/hello-world/</id>
+    <published>2016-10-14T03:07:00.000Z</published>
+    <updated>2020-05-31T00:20:12.652Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Since my teenager years I’ve been using the internet quite a lot and, with that, learning many on many different topics. Such was only possible because of the large amount of educational content provided by “anonymous” people through blogs, forums and video channels. Probably because of that, I always felt admired by this spirit of free and open sharing and mutual help.</p><p>From early on, I’ve found myself thinking about creating a blog or a video channel about “How to program” or something similar, that would allow me to give back what I’ve learned, but I always came across other great content providers that were making it much better than I would probably ever done.</p><p>Today with my studies course reaching its end, my master thesis arriving and my attention focusing on Computer Vision, Artificial Intelligence and Robotics I feel that the uniqueness of information that I would be capable to produce is greater and time is right to, once for all, create such web page. Also, this will be most valuable for me by serving as an alive showcase of what i’m doing and my interests as well as an extra motivation to learn and explore more. (You may find that this is not a     novelty on my life by reading my About page.)</p><p>So, in this blog you may expect to find content about AI, CV, Robotics and other computer related topics. These could appear in two types of posts: experiments/toy projects or supper summaries of “complex” subjects that I find possible to compress without lose to much. It is also possible that I explore here some of my philosophical ideas that often lie between natural intelligence/consciousnesses and the artificial counterpart. Finally, I may be sharing here some of the 5 minutes ideas that I have through the day and that I would like to work on if I had the number of lives of a cat.</p><p>That’s all; Thanks!<br>Until the next post.</p><iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/273662969&amp;color=000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;p&gt;Since my teenager years I’ve been usin
+      
+    
+    </summary>
+    
+    
+      <category term="meta" scheme="http://danfergo.github.io/tags/meta/"/>
+    
+  </entry>
+  
+</feed>
