@@ -139,6 +139,10 @@ article {
     text-align: justify;
 }
 
+article a {
+    font-weight: bold;
+}
+
 blockquote {
     color: #808080;
     font-style: italic;
