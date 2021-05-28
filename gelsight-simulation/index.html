@@ -6,7 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Most current works in Sim2Real learning for robotic manipulation tasks leverage camera vision that may be significantly occluded by robot hands during the manipulation. Tactile sensing offers compl...">
+    <meta name="description" content="
+This work has been published at RA-L and ICRA 2021[1].
+AbstractMost current works in Sim2Real learning for robotic manipulation tasks leverage camera vision that may be significantly occluded by r...">
     <meta name="keyword"  content="danfergo, programming, code">
     <link rel="shortcut icon" href="/img/favicon.png">
     <link rel='alternate' type='application/rss+xml' title='RSS' href='/atom.xml'>
@@ -194,7 +196,7 @@
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         <!--Posted by danfergo on -->
-                        May 20, 2019
+                        May 28, 2021
                     </span>
                 </div>
             </div>
@@ -215,7 +217,10 @@
                 col-xs-12
                 post-container">
 
-                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Most current works in <em>Sim2Real</em> learning for robotic manipulation tasks leverage camera vision that may be significantly occluded by robot hands during the manipulation. Tactile sensing offers complementary information to vision and can compensate for the information loss caused by the occlusion. However, the use of tactile sensing is restricted in the <em>Sim2Real</em> research due to no simulated tactile sensors being available. To mitigate the gap, we introduce a novel approach for simulating a GelSight tactile sensor in the commonly used Gazebo simulator. Similar to the real GelSight sensor, the simulated sensor can produce high-resolution images by an optical sensor from the interaction between the touched object and an opaque soft membrane. It can indirectly sense forces, geometry, texture and other properties of the object and enables <em>Sim2Real</em> learning with tactile sensing. Preliminary experimental results have shown that the simulated sensor could generate realistic outputs similar to the ones captured by a real GelSight sensor. </p>
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="video-container"><iframe src="https://www.youtube.com/embed/tr6orOcGic0" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+<p><strong>This work has been published at RA-L and ICRA 2021</strong><sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Daniel Fernandes Gomes, Paolo Paoletti and Shan Luo, &#65282;Generation of GelSight Tactile Images for Sim2Real Learning&#65282;,  **[RA Letters](https://ieeexplore.ieee.org/abstract/document/9369877)**, **[ArXiv preprint](https://arxiv.org/abs/2101.07169)**
+">[1]</span></a></sup>.</p>
+<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Most current works in <em>Sim2Real</em> learning for robotic manipulation tasks leverage camera vision that may be significantly occluded by robot hands during the manipulation. Tactile sensing offers complementary information to vision and can compensate for the information loss caused by the occlusion. However, the use of tactile sensing is restricted in the <em>Sim2Real</em> research due to no simulated tactile sensors being available. To mitigate the gap, we introduce a novel approach for simulating a GelSight tactile sensor in the commonly used Gazebo simulator. Similar to the real GelSight sensor, the simulated sensor can produce high-resolution images by an optical sensor from the interaction between the touched object and an opaque soft membrane. It can indirectly sense forces, geometry, texture and other properties of the object and enables <em>Sim2Real</em> learning with tactile sensing. Preliminary experimental results have shown that the simulated sensor could generate realistic outputs similar to the ones captured by a real GelSight sensor. </p>
 
 <img width="100%" src="samples_qualitative.jpg" title="Data collection using an FDM 3D Printer" margin:3rem auto 1rem;"> 
 
@@ -255,10 +260,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="ViTac-workshop"><a href="#ViTac-workshop" class="headerlink" title="ViTac workshop"></a>ViTac workshop</h2><p>This GelSight Simulation method was firstly proposed at the <a target="_blank" rel="noopener" href="http://wordpress.csc.liv.ac.uk/smartlab/icra-2019-vitac-workshop/">2019 ICRA ViTac Worshop</a> and, given the  <a target="_blank" rel="noopener" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=1347008206220158376">interest shown</a> by the community, now revised and extended in a new publication<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Daniel Fernandes Gomes, Paolo Paoletti and Shan Luo, &#65282;Generation of GelSight Tactile Images for Sim2Real Learning&#65282;, **[ArXiv preprint](https://arxiv.org/abs/2101.07169)**
+<h2 id="ViTac-workshop"><a href="#ViTac-workshop" class="headerlink" title="ViTac workshop"></a>ViTac workshop</h2><p>This GelSight Simulation method was firstly proposed at the <a target="_blank" rel="noopener" href="http://wordpress.csc.liv.ac.uk/smartlab/icra-2019-vitac-workshop/">2019 ICRA ViTac Worshop</a> and, given the  <a target="_blank" rel="noopener" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=1347008206220158376">interest shown</a> by the community, now revised and extended in a new publication<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Daniel Fernandes Gomes, Paolo Paoletti and Shan Luo, &#65282;Generation of GelSight Tactile Images for Sim2Real Learning&#65282;,  **[RA Letters](https://ieeexplore.ieee.org/abstract/document/9369877)**, **[ArXiv preprint](https://arxiv.org/abs/2101.07169)**
 ">[1]</span></a></sup>. For instance, the initial elastomer deformation approximation approach, generated unrealistic sharp contouring around the in-contact areas, as shown in <strong>Figure 2</strong>. Improvements achieved now, are shown in <strong>Figure 3.</strong></p>
 <img src="/gelsight-simulation/vitac2019workshop.jpg" class="">
-<p><strong>Figure 2</strong>. Real and synthetic tactile samples next to the corresponding experimental setup, as in the first work<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Daniel Fernandes Gomes, Paolo Paoletti and Shan Luo, &#65282;Generation of GelSight Tactile Images for Sim2Real Learning&#65282;, **[ArXiv preprint](https://arxiv.org/abs/2101.07169)**
+<p><strong>Figure 2</strong>. Real and synthetic tactile samples next to the corresponding experimental setup, as in the first work<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Daniel Fernandes Gomes, Paolo Paoletti and Shan Luo, &#65282;Generation of GelSight Tactile Images for Sim2Real Learning&#65282;,  **[RA Letters](https://ieeexplore.ieee.org/abstract/document/9369877)**, **[ArXiv preprint](https://arxiv.org/abs/2101.07169)**
 ">[1]</span></a></sup>. experimental setup. Samples were collected using ordinary objects, and the experimental setup consisted on a GelSight 2014 installed on a UR5 robotic arm.</p>
 <img src="/gelsight-simulation/heightmap.jpg" class="">
 <p><strong>Figure 3</strong>. Comparison of different methods for approximating elastomer deformations: without any smoothing effects (<strong><em>Before Smoothing</em></strong>), smoothed with a single Gaussian filter (<strong><em>Single Gaussian</em></strong>) and smoothed with the DoG (<strong><em>Difference of Gaussians</em></strong>).  </p>
@@ -275,7 +280,7 @@ Your browser does not support the video tag.</video>
 <h2 id="Sim2Real-transfer-learning"><a href="#Sim2Real-transfer-learning" class="headerlink" title="Sim2Real transfer learning"></a>Sim2Real transfer learning</h2><p>One aspect to consider in the <em>Sim2Real</em> learning is the <em>Sim2Real</em> gap that results from characteristics of the real world being not modeled in the simulation. In our case, we find that one major difference between the real and synthetic samples are the textures introduced by the 3D printing process. To mitigate this issue, we create twelve texture maps using GIMP that resemble the textures observed in the real samples, as shown in <strong>Figure 1</strong>. By randomly perturbing the captured virtual depth-maps with such textures, we are able to produce an effective data augmentation scheme that significantly improves the <em>Sim2Real</em> transition, from a 43.76% classification accuracy to 76.19%, in the real data.</p>
 <img src="/gelsight-simulation/texture_augmented.jpg" class="">
 <p><strong> Figure 4 </strong> On the top row, four of the twelve textures created to perturb the captured virtual depth-maps, to address the <em>Sim2Real</em> gap.  On the bottom row, corresponding augmented samples fed to the Neural Network during training, after perturbing the depth-map  with the randomly distorted texture, generating the RGB tactile sample using the proposed method, and applying a random augmentation transformation.</p>
-<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Paolo Paoletti and Shan Luo, ＂Generation of GelSight Tactile Images for Sim2Real Learning＂, <strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2101.07169">ArXiv preprint</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Achu Wilson and Shan Luo, ＂GelSight Simulation for Sim2Real Learning＂, ViTac Workshop ICRA 2019. <strong><a target="_blank" rel="noopener" href="http://wordpress.csc.liv.ac.uk/smartlab/wp-content/uploads/sites/5/2019/06/ICRA2019ViTac_paper_8.pdf">paper</a></strong><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>
+<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Paolo Paoletti and Shan Luo, ＂Generation of GelSight Tactile Images for Sim2Real Learning＂,  <strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/9369877">RA Letters</a></strong>, <strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2101.07169">ArXiv preprint</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Achu Wilson and Shan Luo, ＂GelSight Simulation for Sim2Real Learning＂, ViTac Workshop ICRA 2019. <strong><a target="_blank" rel="noopener" href="http://wordpress.csc.liv.ac.uk/smartlab/wp-content/uploads/sites/5/2019/06/ICRA2019ViTac_paper_8.pdf">paper</a></strong><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>
 
                 <hr>
 
@@ -283,13 +288,9 @@ Your browser does not support the video tag.</video>
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/geltip/" data-toggle="tooltip" data-placement="top" title="GelTip: A Finger-shaped Optical Tactile Sensor for Robotic Manipulation">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/garmnet/" data-toggle="tooltip" data-placement="top" title="GarmNet: Improving Global with Local Perception for Robotic Laundry Folding">Next Post &rarr;</a>
+                            <a href="/geltip/" data-toggle="tooltip" data-placement="top" title="GelTip: A Finger-shaped Optical Tactile Sensor for Robotic Manipulation">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
