@@ -280,6 +280,14 @@ pre code {
     margin-top: 20px;
 }
 
+.post-container .figure + p {
+    margin-top: -1rem;
+}
+
+.post-container .highlight figcaption {
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 767px) {
     .navbar-default .navbar-collapse {
         border: none;
