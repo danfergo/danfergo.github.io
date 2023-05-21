@@ -17,7 +17,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://danfergo.github.io/yarok/">
+    <link rel="canonical" href="http://danfergo.github.io/yarok-framework/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -323,7 +323,7 @@
     <article>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><span class="init-cap">T</span>he development of Robotics Software is a combersome task, often requiring the programming of multiple components for handling different sensors and actuators. Fortunately the adoption of software frameworks, namely the Robotic Operating System (ROS), has enabled the sharing of these components amongst practitioners, resulting in quicker prototpyings. Nonetheless, ROS is a complex framework, with a steep learning curve, requiring the understanding of the framework achitecture, messaging system, multiple programming languages, highly tied the operating system, etc. while, not supporting out-of-the-box more sophisticated simulators, such as MuJoCo – of high interest to current Machine Learning/Robotics research. On the other hand, <em>MuJoCo</em>, which can be set-up and run from a single <em>Python</em> script, does not include many capabilities for modularity or integration with real world hardware. To address this gap, we introduce the <em>Yarok</em> framework. Using <em>Yarok</em> practitioners can describe components using an slightly extended MuJoCo markup language, that are directly represented as Python classes, and have full experimental setups in a few clear lines of code. Further, the low level interfaces, for each component, for interacting with the environment (MuJoCo, or real world), can be also written as Python classes, and are enabled by the framework, for the corresponding environment.  </p>
 <figure class="fig-no-caption">
-            <img style="width:100%; margin:0;padding: 0;" src="/yarok/cover.jpg">
+            <img style="width:100%; margin:0;padding: 0;" src="/yarok-framework/cover.jpg">
             
           </figure>
 <h2 id="The-Component"><a href="#The-Component" class="headerlink" title="The Component"></a>The Component</h2><p>The central concept in Yarok is the component. A Component is a Python annotated class that allows you to bundle together the component controller and template description (using extended MuJoCo MJCF). In the component, you can also define environment interfaces that, at runtime, depending on what enviroment yarok is running, override the environment-independent controller class.</p>
@@ -375,8 +375,8 @@
          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
 
         var disqus_shortname = "danfergo";
-        var disqus_identifier = "http://danfergo.github.io/yarok/";
-        var disqus_url = "http://danfergo.github.io/yarok/";
+        var disqus_identifier = "http://danfergo.github.io/yarok-framework/";
+        var disqus_url = "http://danfergo.github.io/yarok-framework/";
 
         (function () {
             var dsq = document.createElement('script');
