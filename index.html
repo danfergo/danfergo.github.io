@@ -6,14 +6,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Welcome to Danfergo personal blog. Here you will find tutorials, to-do ideas, programming experiments, society and more.">
-    <meta name="keyword"  content="danfergo, programming, code">
+    <meta name="description" content="Welcome to Danfergo Research. Here you will find my latest research projects.">
+    <meta name="keyword" content="danfergo, programming, code">
     <link rel="shortcut icon" href="/img/favicon.png">
     <link rel='alternate' type='application/rss+xml' title='RSS' href='/atom.xml'>
 
     <title>
         
-          Compulsive curiosity
+            Danfergo Research
         
     </title>
 
@@ -39,25 +39,29 @@
 <link rel="stylesheet" href="/css/hamburgers.min.css">
 
 
+    
+<link rel="stylesheet" href="/css/carousel.css">
+
 
     <!-- Custom Fonts -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
 
 
     <!-- Hux Delete, sad but pending in China -->
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
     <!-- ga & ba script hoook -->
@@ -68,16 +72,16 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="">
 
-    <!-- Navigation -->
+<!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
-            <button class="hamburger hamburger--spring navbar-toggle" type="button">
+           <!-- <button class="hamburger hamburger--spring navbar-toggle" type="button">
               <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
               </span>
-            </button>
+            </button> -->
             <!--<button type="button" class="navbar-toggle">-->
             <!--<span class="sr-only">Toggle navigation</span>-->
             <!--<span class="icon-bar"></span>-->
@@ -93,7 +97,7 @@
             so, when navbar scale out, the <nav> will cover tags.
             also mask any touch event of tags, unfortunately.
         -->
-        <div id="huxblog_navbar">
+        <!-- <div id="huxblog_navbar">
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -107,182 +111,314 @@
 
                     
                     <li>
-                        <a href="/tags/">Tags</a>
+                        <a href="/about/">About</a>
                     </li>
                     
                     
 
                     
                     <li>
-                        <a href="/about/">About</a>
+                        <a href="/tags/">Tags</a>
                     </li>
                     
                     
 
                 </ul>
-            </div>
+            </div> -->
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
 </nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
+<!--<script>-->
+<!--    // Drop Bootstarp low-performance Navbar-->
+<!--    // Use customize navbar with high-quality material design animation-->
+<!--    // in high-perf jank-free CSS3 implementation-->
+<!--    var $body = document.body;-->
+<!--    var $toggle = document.querySelector('.navbar-toggle');-->
+<!--    var $navbar = document.querySelector('#huxblog_navbar');-->
+<!--    var $collapse = document.querySelector('.navbar-collapse');-->
 
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e) {
-        if ($navbar.className.indexOf('in') > 0) {
-            // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function () {
-                // prevent frequently toggle
-                if ($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            }, 400)
+<!--    $toggle.addEventListener('click', handleMagic)-->
+<!--    function handleMagic(e) {-->
+<!--        if ($navbar.className.indexOf('in') > 0) {-->
+<!--            // CLOSE-->
+<!--            $navbar.className = " ";-->
+<!--            // wait until animation end.-->
+<!--            setTimeout(function () {-->
+<!--                // prevent frequently toggle-->
+<!--                if ($navbar.className.indexOf('in') < 0) {-->
+<!--                    $collapse.style.height = "0px"-->
+<!--                }-->
+<!--            }, 400)-->
 
-            var pos = $toggle.className.indexOf("is-active");
-            if (pos > 0) {
-                $toggle.className = $toggle.className.substr(0, pos);
-            }
-
-
-        } else {
-            // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-            $toggle.className += " is-active";
-        }
-    }
-</script>
+<!--            var pos = $toggle.className.indexOf("is-active");-->
+<!--            if (pos > 0) {-->
+<!--                $toggle.className = $toggle.className.substr(0, pos);-->
+<!--            }-->
 
 
-    <!-- Main Content -->
-    <!-- Page Header --> <!-- style="background-image: url('/img/home-bg.jpg')" -->
-<header class="intro-header" >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Compulsive curiosity</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading"></span>
-                </div>
-            </div>
+<!--        } else {-->
+<!--            // OPEN-->
+<!--            $collapse.style.height = "auto"-->
+<!--            $navbar.className += " in";-->
+<!--            $toggle.className += " is-active";-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+
+<!-- Main Content -->
+<!-- Page Header --> <!-- style="background-image: url('/img/home-bg.jpg')" -->
+<header class="intro-header">
+    <div class="center-wrapper">
+        <div class="site-heading">
+            <h1>Danfergo Research</h1>
+            <!--<hr class="small">-->
+            <span class="subheading">Compulsive Curiosity, Beautiful Engineering</span>
         </div>
     </div>
 </header>
 
 
-
 <!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
+<div class="center-wrapper post-container">
 
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
+    <!-- Main Content -->
+<!--<h1 style="margin-top:3rem; margin-bottom: 2rem;">Featured</h1>-->
+<div style="height:1rem"></div>
 
-
-<div class="index post-preview">
-    <div class="img-preview">
-        <a href="/gelsight-simulation/"
-           title="GelSight Simulation for Sim2Real Learning"
-           style="background-image: url(gelsight-simulation/cover.png)"></a>
-    </div>
-    <div class="text-preview">
-        <a href="/gelsight-simulation/">
-            <h2 class="post-title">
-                GelSight Simulation for Sim2Real Learning
-            </h2>
-            <h3 class="post-subtitle">
-                
-            </h3>
-
+    <div class="index post-preview">
+        <div class="img-preview">
+            <a href="/geltip-sim/"
+               title="Simulation of GelSight Sensors of Complex Morphologies"
+               style="background-image: url(geltip-sim/cover.jpg)"></a>
+        </div>
+        <div class="text-preview">
+            <a href="/geltip-sim/">
+                <h2 class="post-title">
+                    Simulation of GelSight Sensors of Complex Morphologies
+                </h2>
+            </a>
             <div class="post-content-preview">
-                
-This work has been published at RA-L and ICRA 2021[1].
-AbstractMost current works in Sim2Real learning for robotic manipulation tasks leverage camera vision that may be significantly occluded by rob ...
+                <a href="/geltip-sim/" style="text-decoration: none;">
+                    Existing simulation methods are limited to flat GelSight sensors.  We introduce a method for curved GelSight sensors such as the GelTip.
+                </a>
             </div>
-        </a>
-        <p class="post-meta">
-            <!--Posted by danfergo on-->
-            May 28, 2021
-        </p>
-    </div>
-</div>
-<hr>
+            <div class="post-meta" style="padding-top:1rem;">
+                <div><span ><a href="/">Daniel Fernandes Gomes</a>, </span><span ><a target="_blank" rel="noopener" href="http://pcwww.liverpool.ac.uk/~paoletti/index.html">Paolo Paoletti</a></span><span  style="word-break: keep-all; white-space: nowrap;"> and <a target="_blank" rel="noopener" href="https://shanluo.github.io/">Shan Luo</a></span> &bull;
+                    <span style="word-break: keep-all; white-space: nowrap;">
+                        April 24, 2023
+                    </span>
+                </div>
+            </div>
 
-<div class="index post-preview">
-    <div class="img-preview">
-        <a href="/geltip/"
-           title="GelTip: A Finger-shaped Optical Tactile Sensor for Robotic Manipulation"
-           style="background-image: url(geltip/cover.jpg)"></a>
+        </div>
     </div>
-    <div class="text-preview">
-        <a href="/geltip/">
-            <h2 class="post-title">
-                GelTip: A Finger-shaped Optical Tactile Sensor for Robotic Manipulation
-            </h2>
-            <h3 class="post-subtitle">
-                
-            </h3>
+    <!--<hr>-->
 
+    <div class="index post-preview">
+        <div class="img-preview">
+            <a href="/future-grasp/"
+               title="Predicting Future Observations and Grasp Success for Robotic Grasping"
+               style="background-image: url(future-grasp/cover.gif)"></a>
+        </div>
+        <div class="text-preview">
+            <a href="/future-grasp/">
+                <h2 class="post-title">
+                    Predicting Future Observations and Grasp Success for Robotic Grasping
+                </h2>
+            </a>
             <div class="post-content-preview">
-                Sensing contacts throughout the entire finger is an highly valuable capability for a robots (and humans) when carrying manipulation tasks,  as  vision-based  sensing  often  suffers  from  occlusions ...
+                <a href="/future-grasp/" style="text-decoration: none;">
+                    Predicting the outcome candidate actions requires reasoning about the future. Can we exploit unsupervised learning of the environment model to aid this task?
+                </a>
             </div>
-        </a>
-        <p class="post-meta">
-            <!--Posted by danfergo on-->
-            March 7, 2020
-        </p>
-    </div>
-</div>
-<hr>
+            <div class="post-meta" style="padding-top:1rem;">
+                <div><span ><a href="/">Daniel Fernandes Gomes</a>, </span><span ><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=qWSFJqcAAAAJ">Wenxuan Mou</a>, </span><span ><a target="_blank" rel="noopener" href="http://pcwww.liverpool.ac.uk/~paoletti/index.html">Paolo Paoletti</a></span><span  style="word-break: keep-all; white-space: nowrap;"> and <a target="_blank" rel="noopener" href="https://shanluo.github.io/">Shan Luo</a></span> &bull;
+                    <span style="word-break: keep-all; white-space: nowrap;">
+                        December 31, 2022
+                    </span>
+                </div>
+            </div>
 
-<div class="index post-preview">
-    <div class="img-preview">
-        <a href="/garmnet/"
-           title="GarmNet: Improving Global with Local Perception for Robotic Laundry Folding"
-           style="background-image: url(garmnet/cover.png)"></a>
+        </div>
     </div>
-    <div class="text-preview">
-        <a href="/garmnet/">
-            <h2 class="post-title">
-                GarmNet: Improving Global with Local Perception for Robotic Laundry Folding
-            </h2>
-            <h3 class="post-subtitle">
-                
-            </h3>
+    <!--<hr>-->
 
+    <div class="index post-preview">
+        <div class="img-preview">
+            <a href="/yarok/"
+               title="YAROK - Yet another robot framework"
+               style="background-image: url(yarok/cover.jpg)"></a>
+        </div>
+        <div class="text-preview">
+            <a href="/yarok/">
+                <h2 class="post-title">
+                    YAROK - Yet another robot framework
+                </h2>
+            </a>
             <div class="post-content-preview">
-                Developing autonomous assistants to help with domestic tasks is a vital topic in robotics research. Among these tasks, garment folding is one of them that is still far from being achieved mainly due  ...
+                <a href="/yarok/" style="text-decoration: none;">
+                    Programming robotics software is combersome, requiring orchestrating multiple complex parts. YAROK offers platform-independent composable components that bundle robot description and controller for wider reusability.
+                </a>
             </div>
-        </a>
-        <p class="post-meta">
-            <!--Posted by danfergo on-->
-            March 2, 2019
-        </p>
-    </div>
-</div>
-<hr>
+            <div class="post-meta" style="padding-top:1rem;">
+                <div><span ><a href="/">Daniel Fernandes Gomes</a></span><span  style="word-break: keep-all; white-space: nowrap;"> and <a target="_blank" rel="noopener" href="https://shanluo.github.io/">Shan Luo</a></span> &bull;
+                    <span style="word-break: keep-all; white-space: nowrap;">
+                        October 6, 2022
+                    </span>
+                </div>
+            </div>
 
+        </div>
+    </div>
+    <!--<hr>-->
+
+    <div class="index post-preview">
+        <div class="img-preview">
+            <a href="/gelsight-simulation/"
+               title="GelSight Simulation for Sim2Real Learning"
+               style="background-image: url(gelsight-simulation/cover.gif)"></a>
+        </div>
+        <div class="text-preview">
+            <a href="/gelsight-simulation/">
+                <h2 class="post-title">
+                    GelSight Simulation for Sim2Real Learning
+                </h2>
+            </a>
+            <div class="post-content-preview">
+                <a href="/gelsight-simulation/" style="text-decoration: none;">
+                    Simulation accelerates and opens access to robotics research. We introduce a novel approach for simulating the GelSight tactile sensors in the commonly used simulators.
+                </a>
+            </div>
+            <div class="post-meta" style="padding-top:1rem;">
+                <div><span ><a href="/">Daniel Fernandes Gomes</a>, </span><span ><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/tudorjnu/">Tudor Jianu</a>, </span><span ><a target="_blank" rel="noopener" href="https://achuwilson.com/">Achu Wilson</a>, </span><span ><a target="_blank" rel="noopener" href="http://pcwww.liverpool.ac.uk/~paoletti/index.html">Paolo Paoletti</a></span><span  style="word-break: keep-all; white-space: nowrap;"> and <a target="_blank" rel="noopener" href="https://shanluo.github.io/">Shan Luo</a></span> &bull;
+                    <span style="word-break: keep-all; white-space: nowrap;">
+                        May 28, 2021
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--<hr>-->
+
+    <div class="index post-preview">
+        <div class="img-preview">
+            <a href="/geltip/"
+               title="GelTip: A Finger-shaped Optical Tactile Sensor for Robotic Manipulation"
+               style="background-image: url(geltip/cover.gif)"></a>
+        </div>
+        <div class="text-preview">
+            <a href="/geltip/">
+                <h2 class="post-title">
+                    GelTip: A Finger-shaped Optical Tactile Sensor for Robotic Manipulation
+                </h2>
+            </a>
+            <div class="post-content-preview">
+                <a href="/geltip/" style="text-decoration: none;">
+                    Touch is a vital sense for object manipulation. We propose a finger-shaped sensor that can sense high-resolution contacts on any location of its surface.
+                </a>
+            </div>
+            <div class="post-meta" style="padding-top:1rem;">
+                <div><span ><a href="/">Daniel Fernandes Gomes</a>, </span><span ><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=m2O1AdMAAAAJ">Zhonglin Lin</a></span><span  style="word-break: keep-all; white-space: nowrap;"> and <a target="_blank" rel="noopener" href="https://shanluo.github.io/">Shan Luo</a></span> &bull;
+                    <span style="word-break: keep-all; white-space: nowrap;">
+                        March 7, 2020
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--<hr>-->
+
+    <div class="index post-preview">
+        <div class="img-preview">
+            <a href="/garmnet/"
+               title="GarmNet: Improving Global with Local Perception for Robotic Laundry Folding"
+               style="background-image: url(garmnet/cover.gif)"></a>
+        </div>
+        <div class="text-preview">
+            <a href="/garmnet/">
+                <h2 class="post-title">
+                    GarmNet: Improving Global with Local Perception for Robotic Laundry Folding
+                </h2>
+            </a>
+            <div class="post-content-preview">
+                <a href="/garmnet/" style="text-decoration: none;">
+                    We propose a novel end-to-end deep learning model named GarmNet that is able to simultaneously localize the garment and detect landmarks for grasping.
+                </a>
+            </div>
+            <div class="post-meta" style="padding-top:1rem;">
+                <div><span ><a href="/">Daniel Fernandes Gomes</a>, </span><span ><a target="_blank" rel="noopener" href="https://shanluo.github.io/">Shan Luo</a></span><span  style="word-break: keep-all; white-space: nowrap;"> and <a target="_blank" rel="noopener" href="https://scholar.google.pt/citations?user=WLOWIngoRCoC">Luis Filipe Teixeira</a></span> &bull;
+                    <span style="word-break: keep-all; white-space: nowrap;">
+                        March 2, 2019
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--<hr>-->
+
+    <div class="index post-preview">
+        <div class="img-preview">
+            <a href="/lidaco/"
+               title="Lidaco:  A Modular Wind Lidar Data Converter"
+               style="background-image: url(lidaco/cover.jpg)"></a>
+        </div>
+        <div class="text-preview">
+            <a href="/lidaco/">
+                <h2 class="post-title">
+                    Lidaco:  A Modular Wind Lidar Data Converter
+                </h2>
+            </a>
+            <div class="post-content-preview">
+                <a href="/lidaco/" style="text-decoration: none;">
+                    Working with experimental data requires reading from and writing to multiple data formats. We created a highly configurable and modular converter that enables setting up readers and writters in an any-to-any fashion
+                </a>
+            </div>
+            <div class="post-meta" style="padding-top:1rem;">
+                <div><span ><a href="/">Daniel Fernandes Gomes</a>, </span><span ><a target="_blank" rel="noopener" href="https://web.fe.up.pt/~jlopes/">João Correia Lopes</a>, </span><span ><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?hl=en&user=HShUGPIAAAAJ">Nikola Vasiljevic</a>, </span><span ><a target="_blank" rel="noopener" href="https://www.researc&hl=enhgate.net/profile/Tobias-Klaas">Tobias Claas</a></span><span  style="word-break: keep-all; white-space: nowrap;"> and <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/renatoabreu1196/">Renato Abreu</a></span> &bull;
+                    <span style="word-break: keep-all; white-space: nowrap;">
+                        December 31, 2018
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--<hr>-->
+
+    <div class="index post-preview">
+        <div class="img-preview">
+            <a href="/windspt/"
+               title="WindsPT: An e-Science Platform for Wind Measurement Campaigns"
+               style="background-image: url(windspt/cover.gif)"></a>
+        </div>
+        <div class="text-preview">
+            <a href="/windspt/">
+                <h2 class="post-title">
+                    WindsPT: An e-Science Platform for Wind Measurement Campaigns
+                </h2>
+            </a>
+            <div class="post-content-preview">
+                <a href="/windspt/" style="text-decoration: none;">
+                    We developed an e-science platform that enables the planning and execution of experimental campaigns, and the dissemination of the collected wind measurements.
+                </a>
+            </div>
+            <div class="post-meta" style="padding-top:1rem;">
+                <div><span ><a href="/">Daniel Fernandes Gomes</a>, </span><span ><a target="_blank" rel="noopener" href="https://web.fe.up.pt/~jlopes/">João Correia Lopes</a>, </span><span ><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=JI0UAm0AAAAJ">José Laginha Palma</a></span><span  style="word-break: keep-all; white-space: nowrap;"> et. al</span> &bull;
+                    <span style="word-break: keep-all; white-space: nowrap;">
+                        December 30, 2018
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--<hr>-->
 
 
 <!-- Pager -->
@@ -294,186 +430,126 @@ AbstractMost current works in Sim2Real learning for robotic manipulation tasks l
 
 
 
-                <!-- 如果开启评论功能 -->
-                
-
-            </div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-
-
-            <div class="row responsive-sidebar">
-    <div class="col-xs-4 col-sm-4 col-md-12">
-        <section>
-            <div class="short-about">
-                
-                <a href="/about/" title="More about me"> <img
-                            src="/img/avatar.jpg"/></a>
-                
-            </div>
-        </section>
-    </div>
-    <div class="col-xs-8 col-sm-4 col-md-12">
-
-        <!-- Short About -->
-        <section>
-            <!--<br><br>-->
-            <h5><a href="/about/">ABOUT ME</a></h5>
-            <div class="short-about">
-
-
-
-                
-                <p>Hello, I am Daniel.
-                    
-                </p>
-                
-                <p>I&#39;m a PhD student at the smARTlab / Uni. Of Liverpool researching Robotic Manipulation.
-                    
-                </p>
-                
-                <p>Find my latest work here, and subscribe the RSS feed for updates.
-                    
-                            <a href="/about/" title="More about me"> More. </a>
-                    
-                </p>
-                
-                <!--<div class="hidden-xs visible-md">-->
-                    <!-- Social links -->
-                    <!--<ul class="list-inline">
+    <!-- 如果开启评论功能 -->
     
-        <li>
-            <a href="/atom.xml">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                </span>
-            </a>
-        </li>
-    
-
-    
-        <li>
-            <a target="_blank" href="https://github.com/danfergo">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-            </a>
-        </li>
-    
-        <li>
-            <a target="_blank" href="https://scholar.google.com/citations?user=qFc_b5MAAAAJ">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
-                </span>
-            </a>
-        </li>
-    
-        <li>
-            <a target="_blank" href="https://youtube.com/danfergo">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
-                </span>
-            </a>
-        </li>
-    
-        <li>
-            <a target="_blank" href="https://linkedin.com/in/danfergo">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-            </a>
-        </li>
-    
-</ul>-->
-                <!--</div>-->
-            </div>
-        </section>
-
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-12">
-
-        <!-- Featured Tags -->
-        
-        <hr class="hidden-sm">
-        <section>
-            <!-- no hr -->
-            <h5><a href="/tags/">FEATURED TAGS</a></h5>
-            <div class="tags">
-                
-                
-                <a href="/tags/#linux" title="linux"
-                   rel="1">linux</a>
-                
-                
-                
-                <a href="/tags/#vision" title="vision"
-                   rel="1">vision</a>
-                
-                
-                
-                <a href="/tags/#touch" title="touch"
-                   rel="2">touch</a>
-                
-                
-                
-                <a href="/tags/#meta" title="meta"
-                   rel="1">meta</a>
-                
-                
-                
-                <a href="/tags/#tutorials" title="tutorials"
-                   rel="1">tutorials</a>
-                
-                
-            </div>
-        </section>
-        
-
-        <!-- Friends Blog -->
-        
-        <hr>
-        <h5>FRIENDS</h5>
-        <ul class="list-inline">
-
-            
-            <li><a href="https://cgi.csc.liv.ac.uk/~shanluo/" target="_blank">Shan Luo</a></li>
-            
-            <li><a href="http://wordpress.csc.liv.ac.uk/smartlab/" target="_blank">smARTlab</a></li>
-            
-            <li><a href="https://fernandopinto.github.io" target="_blank">Fernando Pinto</a></li>
-            
-            <li><a href="http://paginas.fe.up.pt/~up201106586" target="_blank">Diogo Gomes</a></li>
-            
-        </ul>
-        
-    </div>
-</div>
-
-            </div>
-        
-    </div>
 </div>
 
 
-    <!-- Footer -->
-    <!-- Footer -->
+<!-- Footer -->
+<!-- Footer -->
 <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="text-center">
-                    <ul class="list-inline">
+    <style>
+        /* Tomorrow Night Theme */
+        /* https://jmblog.github.io/color-themes-for-google-code-highlightjs */
+        /* Original theme - https://github.com/chriskempson/tomorrow-theme */
+        /* https://jmblog.github.io/color-themes-for-google-code-highlightjs */
+        .tomorrow-comment,
+        .post-container pre .comment,
+        .post-container pre .title {
+            color: #969896;
+        }
+
+        .tomorrow-red,
+        .post-container pre .variable,
+        .post-container pre .attribute,
+        .post-container pre .tag,
+        .post-container pre .regexp,
+        .post-container pre .ruby .constant,
+        .post-container pre .xml .tag .title,
+        .post-container pre .xml .pi,
+        .post-container pre .xml .doctype,
+        .post-container pre .html .doctype,
+        .post-container pre .css .id,
+        .post-container pre .css .class,
+        .post-container pre .css .pseudo {
+            color: #cc6666;
+        }
+
+        .tomorrow-orange,
+        .post-container pre .number,
+        .post-container pre .preprocessor,
+        .post-container pre .built_in,
+        .post-container pre .literal,
+        .post-container pre .params,
+        .post-container pre .constant {
+            color: #de935f;
+        }
+
+        .tomorrow-yellow,
+        .post-container pre .class,
+        .post-container pre .ruby .class .title,
+        .post-container pre .css .rules .attribute {
+            color: #f0c674;
+        }
+
+        .tomorrow-green,
+        .post-container pre .string,
+        .post-container pre .value,
+        .post-container pre .inheritance,
+        .post-container pre .header,
+        .post-container pre .ruby .symbol,
+        .post-container pre .xml .cdata {
+            color: #b5bd68;
+        }
+
+        .tomorrow-aqua,
+        .post-container pre .css .hexcolor {
+            color: #8abeb7;
+        }
+
+        .tomorrow-blue,
+        .post-container pre .function,
+        .post-container pre .python .decorator,
+        .post-container pre .python .title,
+        .post-container pre .ruby .function .title,
+        .post-container pre .ruby .title .keyword,
+        .post-container pre .perl .sub,
+        .post-container pre .javascript .title,
+        .post-container pre .coffeescript .title {
+            color: #81a2be;
+        }
+
+        .tomorrow-purple,
+        .post-container pre .keyword,
+        .post-container pre .javascript .function {
+            color: #b294bb;
+        }
+
+        .post-container .highlight,
+        .post-container pre {
+            display: block;
+            /*background: #1d1f21;*/
+            background: #1a1a1a;
+            color: #c5c8c6;
+            font-family: Menlo, Monaco, Consolas, monospace;
+            line-height: 1.5;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+    <div class="short-about">
+        
+            <a href="/about/" title="More about me"> <img
+                        src="/img/avatar.jpg"/></a>
+        
+    </div>
+    <div class="short-about">
+
+        
+            <p>Daniel Fernandes Gomes or @danfergo is a passionate Researcher and Engineer on Intelligence. 
+                
+            </p>
+        
+            <p>Research associate at Kings College London and PhD student at the University of Liverpool.
+                
+                    <a href="/about/" title="More about me"> More. </a>
+                
+            </p>
+        
+    </div>
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="text-center">
+            <ul class="list-inline">
     
         <li>
             <a href="/atom.xml">
@@ -523,18 +599,12 @@ AbstractMost current works in Sim2Real learning for robotic manipulation tasks l
         </li>
     
 </ul>
-                </div>
-                <p class="copyright text-muted">
-                    &copy; Compulsive curiosity 2023
-                    <br>
-                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a>
-                    .
-                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a>
-                    .
-                    Modified by <a href="/">Danfergo</a>
-                </p>
-            </div>
         </div>
+        <p class="copyright text-muted">
+            <a href="https://github.com/Kaijun/hexo-theme-huxblog" target="_blank">Hux</a> for <a
+                    href="https://hexo.io/" target="_blank">Hexo</a><br>
+            <!--                    &copy; Danfergo Research 2023-->
+        </p>
     </div>
 </footer>
 
@@ -548,6 +618,10 @@ AbstractMost current works in Sim2Real learning for robotic manipulation tasks l
 <script src="/js/bootstrap.min.js"></script>
 
 
+
+<script src="/js/carousel.js"></script>
+
+
 <!-- Custom Theme JavaScript -->
 
 <script src="/js/hux-blog.js"></script>
@@ -556,32 +630,44 @@ AbstractMost current works in Sim2Real learning for robotic manipulation tasks l
 
 <!-- async load function -->
 <script>
-    function async(u, c) {
-        var d = document, t = 'script',
+    function async(u,
+                   c) {
+        var d = document,
+            t = 'script',
+
             o = d.createElement(t),
+
             s = d.getElementsByTagName(t)[0];
         o.src = u;
         if (c) {
-            o.addEventListener('load', function (e) {
-                c(null, e);
-            }, false);
+            o.addEventListener('load',
+                function (e) {
+                    c(null,
+                        e);
+                },
+                false);
         }
-        s.parentNode.insertBefore(o, s);
+        s.parentNode.insertBefore(o,
+            s);
     }
 </script>
 
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+
+     From V1.6,
+ There is no need for Highlight.js,
+
      so Huxblog drops it officially.
 
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
 -->
 <!--
     <script>
-        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js",
+ function(){
             hljs.initHighlightingOnLoad();
         })
     </script>
@@ -593,10 +679,16 @@ AbstractMost current works in Sim2Real learning for robotic manipulation tasks l
 <!--<script>-->
 <!--// only load tagcloud.js in tag.html-->
 <!--if($('#tag_cloud').length !== 0){-->
-<!--async("http://danfergo.github.io/js/jquery.tagcloud.js",function(){-->
+<!--async("http://danfergo.github.io/js/jquery.tagcloud.js",
+function(){-->
 <!--$.fn.tagcloud.defaults = {-->
-<!--//size: {start: 1, end: 1, unit: 'em'},-->
-<!--color: {start: '#bbbbee', end: '#0085a1'},-->
+<!--//size: {start: 1,
+ end: 1,
+ unit: 'em'},
+-->
+<!--color: {start: '#bbbbee',
+ end: '#0085a1'},
+-->
 <!--};-->
 <!--$('#tag_cloud a').tagcloud();-->
 <!--})-->
@@ -605,10 +697,11 @@ AbstractMost current works in Sim2Real learning for robotic manipulation tasks l
 
 <!--fastClick.js -->
 <script>
-    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
-        var $nav = document.querySelector("nav");
-        if ($nav) FastClick.attach($nav);
-    })
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js",
+        function () {
+            var $nav = document.querySelector("nav");
+            if ($nav) FastClick.attach($nav);
+        })
 </script>
 
 
@@ -617,27 +710,42 @@ AbstractMost current works in Sim2Real learning for robotic manipulation tasks l
 
     <script>
         // Originial
-        (function (i, s, o, g, r, a, m) {
+        (function (i,
+                   s,
+                   o,
+                   g,
+                   r,
+                   a,
+                   m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
+            },
+                i[r].l = 1 * new Date();
             a = s.createElement(o),
+
                 m = s.getElementsByTagName(o)[0];
             a.async = 1;
             a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            m.parentNode.insertBefore(a,
+                m)
+        })(window,
+            document,
+            'script',
+            '//www.google-analytics.com/analytics.js',
+            'ga');
 
-        ga('create', 'UA-85798112-1', 'auto');
-        ga('send', 'pageview');
+        ga('create',
+            'UA-85798112-1',
+            'auto');
+        ga('send',
+            'pageview');
 
         $('body').on('click', 'a', function (e) {
             var _ = $(this);
-            if(_[0].pathname.indexOf('.') > -1 && _[0].hostname === window.location.hostname){
+            if (_[0].pathname.indexOf('.') > -1 && _[0].hostname === window.location.hostname) {
 
-                if (_.data('prevented') === 1)
-                {
+                if (_.data('prevented') === 1) {
                     _.removeData("prevented");
                     return true;
                 }
@@ -650,7 +758,7 @@ AbstractMost current works in Sim2Real learning for robotic manipulation tasks l
                 console.log('Download:', _[0].pathname);
                 ga('send', 'pageview', {
                     'page': _[0].pathname,
-                    'hitCallback': function() {
+                    'hitCallback': function () {
                         window.__gacb();
                     }
                 })
@@ -669,11 +777,5 @@ AbstractMost current works in Sim2Real learning for robotic manipulation tasks l
 
 
 
-
-<!-- Image to hack wechat -->
-<!-- img src="http://danfergo.github.io/img/icon_wechat.png" width="0" height="0" />-->
-<!-- Migrate from head to bottom, no longer block render and still work -->
-
 </body>
-
 </html>

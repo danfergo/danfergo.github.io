@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Experimental field campaigns for collecting wind data are essential for academic research and the wind energy industry, but challenging to organize due to the complex equipment and infrastructure required. Existing e-Science platforms have been developed for more generic domains, which prevents t...">
+    <meta name="keyword" content="danfergo, programming, code">
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel='alternate' type='application/rss+xml' title='RSS' href='/atom.xml'>
+
+    <title>
+        
+            WindsPT: An e-Science Platform for Wind Measurement Campaigns - Danfergo Research
+        
+    </title>
+
+    <link rel="canonical" href="http://danfergo.github.io/windspt/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Hamburgers css -->
+    
+<link rel="stylesheet" href="/css/hamburgers.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/carousel.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China -->
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+           <!-- <button class="hamburger hamburger--spring navbar-toggle" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button> -->
+            <!--<button type="button" class="navbar-toggle">-->
+            <!--<span class="sr-only">Toggle navigation</span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            
+            <a class="navbar-brand" href="/">
+                Danfergo Research
+            </a>
+            
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                    
+                    
+
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    
+
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                    
+
+                </ul>
+            </div> -->
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!--<script>-->
+<!--    // Drop Bootstarp low-performance Navbar-->
+<!--    // Use customize navbar with high-quality material design animation-->
+<!--    // in high-perf jank-free CSS3 implementation-->
+<!--    var $body = document.body;-->
+<!--    var $toggle = document.querySelector('.navbar-toggle');-->
+<!--    var $navbar = document.querySelector('#huxblog_navbar');-->
+<!--    var $collapse = document.querySelector('.navbar-collapse');-->
+
+<!--    $toggle.addEventListener('click', handleMagic)-->
+<!--    function handleMagic(e) {-->
+<!--        if ($navbar.className.indexOf('in') > 0) {-->
+<!--            // CLOSE-->
+<!--            $navbar.className = " ";-->
+<!--            // wait until animation end.-->
+<!--            setTimeout(function () {-->
+<!--                // prevent frequently toggle-->
+<!--                if ($navbar.className.indexOf('in') < 0) {-->
+<!--                    $collapse.style.height = "0px"-->
+<!--                }-->
+<!--            }, 400)-->
+
+<!--            var pos = $toggle.className.indexOf("is-active");-->
+<!--            if (pos > 0) {-->
+<!--                $toggle.className = $toggle.className.substr(0, pos);-->
+<!--            }-->
+
+
+<!--        } else {-->
+<!--            // OPEN-->
+<!--            $collapse.style.height = "auto"-->
+<!--            $navbar.className += " in";-->
+<!--            $toggle.className += " is-active";-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+
+<!-- Main Content -->
+
+<!-- Image to hack wechat -->
+<!-- <img src="http://danfergo.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<!--<style type="text/css">-->
+<!--header.intro-header{-->
+<!--background-image: url('/img/home-bg.jpg')-->
+<!--}-->
+<!--</style>-->
+<header class="intro-header">
+    <div class="center-wrapper">
+        <div class="post-heading article-wrapper">
+            <div class="tags">
+                
+            </div>
+            <h1>WindsPT: An e-Science Platform for Wind Measurement Campaigns</h1>
+            <h2 class="subheading"></h2>
+            <div class="meta">
+                
+                    <div><span ><a href="/">Daniel Fernandes Gomes</a>, </span><span ><a target="_blank" rel="noopener" href="https://web.fe.up.pt/~jlopes/">João Correia Lopes</a>, </span><span ><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=JI0UAm0AAAAJ">José Laginha Palma</a></span><span  style="word-break: keep-all; white-space: nowrap;"> et. al</span></div>
+                
+                <div style="padding-top:1rem">
+                    December 2018
+                </div>
+                <!--Posted by danfergo on -->
+            </div>
+        </div>
+
+
+        <div class="center-wrapper article-wrapper" style="padding: 1rem 0;">
+            
+            
+            
+                <button class="btn header-btn collapsable-btn" data-for="cite-this">
+                    <i class="fa fa-quote-left"></i>
+                    <span>Cite</span>
+                </button>
+            
+        </div>
+    </div>
+    <div style="background: #f3f3f3">
+        <div class="center-wrapper article-wrapper">
+            
+            
+                <div class="collapsable-blind" data-of="cite-this">
+                    <div style="padding: 2rem 0;" class="inner-container">
+                        
+                            <strong><a target="_blank" rel="noopener" href="http://doi.org/10.1088/1742-6596/2265/2/022081">WindsPT e-Science platform for wind measurement campaigns</a></strong>
+                            <pre style="background: #f7f7f7; border-radius: 0.3rem; padding:0.8rem; margin: 0;">@article{Gomes_2022,
+    title={WindsPT e-Science platform for wind measurement campaigns},
+    author={D F Gomes and J C Lopes and J M L M Palma and F Senra and S Dias and I L Coimbra},
+    doi={10.1088/1742-6596/2265/2/022081},
+    journal={Journal of Physics: Conference Series},
+    year={2022},
+    month={may},
+    publisher={IOP Publishing},
+    volume={2265},
+    number={2},
+}</pre>
+                        
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+    <style>
+        .header-btn,
+        .header-btn:hover,
+        .header-btn:active,
+        .header-btn:visited,
+        .header-btn:focus {
+            border-radius: 3rem;
+            background: black;
+            border: 2px solid white;
+            padding: 0.8rem 1.6rem;
+            color: white;
+            margin-left: 0.5rem;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        @media (max-width: 767px) {
+            .header-btn,
+            .header-btn:hover,
+            .header-btn:active,
+            .header-btn:visited,
+            .header-btn:focus {
+                background: transparent;
+                font-size: 1.5rem;
+                display: inline-flex;
+                height: 3.5rem;
+                width: 3.5rem;
+                border-radius: 999px;
+                align-items: center;
+                justify-content: center;
+                border: none;
+            }
+
+            .header-btn span {
+                display: none;
+            }
+        }
+
+        .collapsable-blind {
+            height: 0;
+            overflow: hidden;
+            box-sizing: content-box;
+            transition: ease all 0.5s;
+        }
+
+        .collapsable-blind.open {
+            height: auto;
+        }
+
+    </style>
+    <script type="text/javascript">
+        const collapsableBtns = document.querySelectorAll('.collapsable-btn');
+        const collapsableBlinds = document.querySelectorAll('.collapsable-blind');
+
+        let openingTimeout = null;
+
+        collapsableBtns.forEach(btn => {
+            btn.addEventListener('click', (ev) => {
+                const collapsableName = btn.dataset.for;
+                const citeThisBlind = document.querySelector(`.collapsable-blind[data-of='${collapsableName}']`);
+
+                clearTimeout(openingTimeout);
+
+                let sameClosing = false;
+                collapsableBlinds.forEach(blind => {
+                    if (blind.classList.contains('opening') || blind.classList.contains('open')) {
+                        if (blind.dataset.of === collapsableName) {
+                            sameClosing = true;
+                        }
+                        const innerContent = blind.querySelector('.inner-container');
+                        blind.style.height = innerContent.clientHeight + 'px';
+                        blind.classList.remove('opening');
+                        blind.classList.remove('open');
+                        setTimeout(() => {
+                            blind.style.removeProperty('height');
+                        })
+                    }
+                });
+
+                if (!sameClosing) {
+                    const innerContent = citeThisBlind.querySelector('.inner-container');
+                    citeThisBlind.style.height = innerContent.clientHeight + 'px';
+                    citeThisBlind.classList.add('opening');
+                    openingTimeout = setTimeout(() => {
+                        citeThisBlind.classList.remove('opening');
+                        citeThisBlind.classList.add('open');
+                        citeThisBlind.style.removeProperty('height');
+                    }, 500);
+                }
+            })
+        });
+    </script>
+</header>
+
+<!-- Post Content -->
+<!-- Post Container -->
+<div class="center-wrapper post-container">
+    <article>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><span class="init-cap">E</span>xperimental field campaigns for collecting wind data are essential for academic research and the wind energy industry, but challenging to organize due to the complex equipment and infrastructure required. Existing e-Science platforms have been developed for more generic domains, which prevents them from capturing the details and requirements of the field. In this project we have developed WindsPT: an e-Science platform for planning, executing, and disseminating wind measurement campaign data. Additionally, we propose a decentralized protocol for transferring large volumes of data from the in-site devices to our platform, ensuring data replication. With an easy-to-use Web interface, WindsPT promotes collaboration between participants, disseminates results among the stakeholders, publishes metadata, uses DOI, and includes metadata that enables machine-to-machine communication.</p>
+<p>The platform development started with the Perdigão 2017<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Perdigão 2017 Field Campaign. [https://perdigao.fe.up.pt](https://perdigao.fe.up.pt)
+">[1]</span></a></sup> campaign and the need of gathering partners collaboration intentions for the campaign planning, as well as producing a reference platform for gathering all the campaign related information (planning documents, datasets, publications, etc). A two-phase questionnaire was developed and made available to the representatives of each institution that would be participating in the campaign. The questionnaire results became the starting point for in-depth discussions among institution representatives, campaign managers, and the development team, with the goal of establishing a common vocabulary amongst all involved parties. Particularly, data curators pruned, and improved with additional metadata, the categories of equipment and the equipment, that was collaboratively added to the platform through the surveys. This became the publicly available equipment catalog. Other discussions revolved around the definition of a measurement station and how to model it in the platform. With that, campaign managers geo-registered in the platform the planned measurement stations.<br><figure class="fig-no-caption">
+            <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/pCLIAfrVCR4" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen></iframe>
+            
+          </figure></p>
+<p>The campaign profile, fulfils the second function of the platform — to host all information related to the campaign. Here, users can find all information related to the campaign: planning and dissemination documents, gathered datasets, measurement equipment and stations (including their geo-registration and operating timelines), participants (visiting timeline and profile) and a logbook that can be used to register all relevant events.</p>
+<p>WindsPT was built with an Angular frontend and NodeJS/ExpressJS backend that exposes a REST api. Relational data is stored on a PostgresSQL database, and the Sequelize ORM is used for handling database queries. To store the planning and dissemination documents, MongoDB GridFS is used under the ExpressJS backend. Given the potentially huge (and unbounded) size of the datasets, a decentralized protocol has been established between data producer institutions, that consists on using Linux rsync protocol periodically between peers of the pool, ensuring the data is replicated across all, while minimising data transfer between nodes. In one of these nodes (ours), a THREDDS Data Server (TDS) gathers files and folders reorganises them in catalogues, and makes them available through different protocols (HTTP, OpeNDAP OGC WMS, etc). The WindsPT backend then re-exposes this catalogued data through its rest api to create the corresponding graphical user interface. This allows us to add additional features such as the capability to download “folders” as zip files, and make the interface similar to the “Documents” interface. </p>
+<figure class="fig-caption">
+            <img style="width:100%; margin:0;padding: 0;" src="/windspt/stations.jpg">
+            <figcaption><strong>Figure 1. </strong> The stations page, in the campaign profile. A top view map of the campaign area shows the stations grouped by category and sub category. When selecting one station, an auto-generated diagram further illustrates what the station would look like, given the planning information.</figcaption>
+          </figure>
+<p>The WindsPT platform  as proved to be a valuable tool during all the phases of the Perdigão 2017 large field experiment. Following that, a multi-campaign version of WindsPT<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Windscanner.PT multi-campaign platform. [https://perdigao.fe.up.pt](https://windscanner.fe.up.pt)">[2]</span></a></sup> platform has been designed to host multiple campaigns on multiple research projects. The advantage of such multi-campaign platform, is that, this way, information about equipment and researchers can be shared across campaigns. Full-text search capabilities, have been added enabling users to find any information across the entire pool of campaigns with just one search query.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Perdigão 2017 Field Campaign. <a target="_blank" rel="noopener" href="https://perdigao.fe.up.pt">https://perdigao.fe.up.pt</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Windscanner.PT multi-campaign platform. <a target="_blank" rel="noopener" href="https://windscanner.fe.up.pt">https://perdigao.fe.up.pt</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>
+    </article>
+
+
+    <hr>
+    <!--    <ul class="pager">-->
+    <!--        -->
+    <!--            <li class="previous">-->
+    <!--                <a href="/lidaco/" data-toggle="tooltip" data-placement="top"-->
+    <!--                   title="Lidaco:  A Modular Wind Lidar Data Converter">&larr; Previous Post</a>-->
+    <!--            </li>-->
+    <!--        -->
+    <!--        -->
+    <!--            <li class="next">-->
+    <!--                <a href="/clevo-p65xrp-inphtech-p600-g-on-linux/" data-toggle="tooltip" data-placement="top"-->
+    <!--                   title="Clevo P65xRP / Inphtech P600-G on Linux">Next Post &rarr;</a>-->
+    <!--            </li>-->
+    <!--        -->
+    <!--    </ul>-->
+
+    
+        <!-- disqus 评论框 start -->
+        <div class="comment">
+            <div id="disqus_thread" class="disqus-thread"></div>
+        </div>
+        <!-- disqus 评论框 end -->
+    
+</div>
+<!--&lt;!&ndash; Side Catalog Container &ndash;&gt;-->
+<!---->
+
+
+    <!-- disqus start -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+        var disqus_shortname = "danfergo";
+        var disqus_identifier = "http://danfergo.github.io/windspt/";
+        var disqus_url = "http://danfergo.github.io/windspt/";
+
+        (function () {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <!-- disqus end -->
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <style>
+        /* Tomorrow Night Theme */
+        /* https://jmblog.github.io/color-themes-for-google-code-highlightjs */
+        /* Original theme - https://github.com/chriskempson/tomorrow-theme */
+        /* https://jmblog.github.io/color-themes-for-google-code-highlightjs */
+        .tomorrow-comment,
+        .post-container pre .comment,
+        .post-container pre .title {
+            color: #969896;
+        }
+
+        .tomorrow-red,
+        .post-container pre .variable,
+        .post-container pre .attribute,
+        .post-container pre .tag,
+        .post-container pre .regexp,
+        .post-container pre .ruby .constant,
+        .post-container pre .xml .tag .title,
+        .post-container pre .xml .pi,
+        .post-container pre .xml .doctype,
+        .post-container pre .html .doctype,
+        .post-container pre .css .id,
+        .post-container pre .css .class,
+        .post-container pre .css .pseudo {
+            color: #cc6666;
+        }
+
+        .tomorrow-orange,
+        .post-container pre .number,
+        .post-container pre .preprocessor,
+        .post-container pre .built_in,
+        .post-container pre .literal,
+        .post-container pre .params,
+        .post-container pre .constant {
+            color: #de935f;
+        }
+
+        .tomorrow-yellow,
+        .post-container pre .class,
+        .post-container pre .ruby .class .title,
+        .post-container pre .css .rules .attribute {
+            color: #f0c674;
+        }
+
+        .tomorrow-green,
+        .post-container pre .string,
+        .post-container pre .value,
+        .post-container pre .inheritance,
+        .post-container pre .header,
+        .post-container pre .ruby .symbol,
+        .post-container pre .xml .cdata {
+            color: #b5bd68;
+        }
+
+        .tomorrow-aqua,
+        .post-container pre .css .hexcolor {
+            color: #8abeb7;
+        }
+
+        .tomorrow-blue,
+        .post-container pre .function,
+        .post-container pre .python .decorator,
+        .post-container pre .python .title,
+        .post-container pre .ruby .function .title,
+        .post-container pre .ruby .title .keyword,
+        .post-container pre .perl .sub,
+        .post-container pre .javascript .title,
+        .post-container pre .coffeescript .title {
+            color: #81a2be;
+        }
+
+        .tomorrow-purple,
+        .post-container pre .keyword,
+        .post-container pre .javascript .function {
+            color: #b294bb;
+        }
+
+        .post-container .highlight,
+        .post-container pre {
+            display: block;
+            /*background: #1d1f21;*/
+            background: #1a1a1a;
+            color: #c5c8c6;
+            font-family: Menlo, Monaco, Consolas, monospace;
+            line-height: 1.5;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+    <div class="short-about">
+        
+            <a href="/about/" title="More about me"> <img
+                        src="/img/avatar.jpg"/></a>
+        
+    </div>
+    <div class="short-about">
+
+        
+            <p>Daniel Fernandes Gomes or @danfergo is a passionate Researcher and Engineer on Intelligence. 
+                
+            </p>
+        
+            <p>Research associate at Kings College London and PhD student at the University of Liverpool.
+                
+                    <a href="/about/" title="More about me"> More. </a>
+                
+            </p>
+        
+    </div>
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="text-center">
+            <ul class="list-inline">
+    
+        <li>
+            <a href="/atom.xml">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a target="_blank" href="https://github.com/danfergo">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+        <li>
+            <a target="_blank" href="https://scholar.google.com/citations?user=qFc_b5MAAAAJ">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+        <li>
+            <a target="_blank" href="https://youtube.com/danfergo">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+        <li>
+            <a target="_blank" href="https://linkedin.com/in/danfergo">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+</ul>
+        </div>
+        <p class="copyright text-muted">
+            <a href="https://github.com/Kaijun/hexo-theme-huxblog" target="_blank">Hux</a> for <a
+                    href="https://hexo.io/" target="_blank">Hexo</a><br>
+            <!--                    &copy; Danfergo Research 2023-->
+        </p>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+
+<script src="/js/carousel.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u,
+                   c) {
+        var d = document,
+            t = 'script',
+
+            o = d.createElement(t),
+
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load',
+                function (e) {
+                    c(null,
+                        e);
+                },
+                false);
+        }
+        s.parentNode.insertBefore(o,
+            s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+
+     From V1.6,
+ There is no need for Highlight.js,
+
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js",
+ function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<!--<script>-->
+<!--// only load tagcloud.js in tag.html-->
+<!--if($('#tag_cloud').length !== 0){-->
+<!--async("http://danfergo.github.io/js/jquery.tagcloud.js",
+function(){-->
+<!--$.fn.tagcloud.defaults = {-->
+<!--//size: {start: 1,
+ end: 1,
+ unit: 'em'},
+-->
+<!--color: {start: '#bbbbee',
+ end: '#0085a1'},
+-->
+<!--};-->
+<!--$('#tag_cloud a').tagcloud();-->
+<!--})-->
+<!--}-->
+<!--</script>-->
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js",
+        function () {
+            var $nav = document.querySelector("nav");
+            if ($nav) FastClick.attach($nav);
+        })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+    <script>
+        // Originial
+        (function (i,
+                   s,
+                   o,
+                   g,
+                   r,
+                   a,
+                   m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            },
+                i[r].l = 1 * new Date();
+            a = s.createElement(o),
+
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a,
+                m)
+        })(window,
+            document,
+            'script',
+            '//www.google-analytics.com/analytics.js',
+            'ga');
+
+        ga('create',
+            'UA-85798112-1',
+            'auto');
+        ga('send',
+            'pageview');
+
+        $('body').on('click', 'a', function (e) {
+            var _ = $(this);
+            if (_[0].pathname.indexOf('.') > -1 && _[0].hostname === window.location.hostname) {
+
+                if (_.data('prevented') === 1) {
+                    _.removeData("prevented");
+                    return true;
+                }
+
+                e.preventDefault();
+                _.data('prevented', 1);
+                window.__gacb = function () {
+                    _[0].click();
+                };
+                console.log('Download:', _[0].pathname);
+                ga('send', 'pageview', {
+                    'page': _[0].pathname,
+                    'hitCallback': function () {
+                        window.__gacb();
+                    }
+                })
+                return false;
+            }
+        });
+
+
+    </script>
+
+
+
+
+<!-- Side Catalog -->
+
+
+
+
+</body>
+</html>
