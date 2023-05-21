@@ -1,0 +1,573 @@
+class: center, middle
+
+# Coding 101
+*by Danfergo*
+
+---
+class: center, middle
+# Part 0
+Firstly, some context
+
+---
+
+# What's a program
+
+Programs are processes that generate **outputs** given certain specific **inputs**.
+
+<center><font size="6"> inputs → program → outputs </font></center>
+
+
+For instance,
+
+<center>"A program that calculates the sum of two numbers"</center>
+
+**Inputs**: the two numbers, e.g. 5 and 10 <br>
+**Program**: the sum operator +  <br>
+**Output**: the result, 15
+
+<center>"A program that makes a pair of jeans given the leg length and hip size"</center>
+
+**Inputs**: the sizes, e.g. 100cm and 50cm <br>
+**Program**: some programs that instructs a sewing machine loaded with denim <br>
+**Output**: the jeans
+
+The catch is that we only know the exact value of the **inputs** when the program is running or about to be run. So, while programming we'll refer to the inputs as **Variables**.
+
+---
+# What's programming
+
+Without code computers can't do much, aside from basic math and logic operations. 
+
+But computers follow exactly what we ask them what to to.
+
+So, as long we explain them <ins>exactly</ins> how to do ***something***, computers will do ***something***.
+
+> As programmers, it is our job to figure out how to explain to the computer what it should do, using instructions that it already knows how to do, such that a desired output is generated.
+
+
+Once we know it, we write it down using code, and run it on the computer. We program the computer. The computer will run it blindly, and if we are sucessful, the computer will generate the outputs we desire.
+
+> The long term art of programming, consists on starting from very simple "programs", that the computer already knows how to execute, and then build ever more complex programs. 
+
+That's where **Programming Languages** come in.
+
+---
+# Programming Languages
+
+In our lives we are always programming. For instance, programming our work days, programming our holidays, we follow others programs, for instance, we might follow a recepie to know how to bake a cake.
+
+**Instant noodles recepie**
+```
+1. Break noodles
+2. Boil 375mL of water in the microwave
+3. Mix the noodles with the water
+
+```
+
+**How to add numbers?**
+```
+1. Write the numbers on rows one after the other (right aligned)
+2. Draw a straight line under the numbers and a plus sign on the left
+3. Right to left, for each column:
+      4. sum the digits on that column
+      5. write the sum units of the corresponding column under the line
+         i.e. the remainder of dividing the sum by 10, sum % 10
+      6. if the sum > 9:
+            7. carry the dozens to the next column  
+               i.e. the quotient of integer division by 10, round down(sum / 10)   
+6. Read the final number written under the straight line
+```
+
+
+---
+class: center, middle
+# Part 1
+Inputs, variables and outputs.
+
+---
+# Intro to programming
+
+There are different styles for telling the computer what to do.
+
+The most common, most used and what most people associate with "programming" is **Imperative Programming**.
+
+There are multiple programming languages, and each have their own specificities, but most of them share most of the same patterns.
+
+Here, we'll use Python to show you the main building blocks. Later, you'll be able to find these same building blocks in all other languages that support imperative programming.
+
+
+.box_info[
+Commonly, we refer to the text that we write down as **Code**, while **Program** would be the program would do in execution. Multiple codes can generate the same program.
+]
+---
+
+# Hello World
+
+Let's put aside the inputs and variables for a now.
+
+The simplest program one can write is the **"Hello World"**. It just outputs the "Hello World" message.
+
+In Python, this is how you would write it.
+
+```python
+print("Hello World")
+``` 
+
+Programmers often write Hello World programs to test whether everything is working properly after installing a new programming language, learning a new programming language, changing computer, etc.
+
+Go ahead and try it!
+
+.box_info[
+When we write *something( ... )*, it means we are asking the computer to do something. In this case, print.
+]
+
+.box_info[
+Note also the text we want to print is wrapped in double quotes ("), we always wrap text in double (") or single (') quotes. We commonly also refer to texts as **strings**.
+]
+
+---
+
+# Comments
+
+We can also write "comments" in the midst of our code, which the computer will ignore.
+
+Comments serve to help other, or future same, humans understand the code that has been written.
+
+```python
+# The next line of code prints Hi
+print("Hi")
+
+# And, the next line of code prints Goodbye
+print("Goodbye")
+``` 
+
+---
+
+# Let's do some math
+
+Computers can also do all kinds of arithmetic and logic operations. 
+```python
+# prints integer numbers
+print(5 + 5) # sum
+print(10 + 5 - 36) # sum, subtraction
+print(55 * 2) # multiplication
+
+# prints numbers with decimal places, also named float values
+print(3 / 2)
+print(2 / 3)
+
+# prints True/False, also named boolean values
+print(3 > 2) # is 3 greater than 2?
+print(4 < 3) # is 4 smaller than 3?
+
+# note the double equals when doing comparison (==)
+print(7 == 7) # is 7 equals to 7?
+
+# Note the second pair of parentheses to set 
+# higher priority on the addition operation.
+print(3 + 5 + 2 * (2 + 3) * 4)
+
+``` 
+
+---
+
+# Assignment
+
+We can use **variables** to hold numbers, and make our code more meaningful, i.e. assign values to variables.
+
+
+```python
+# On the following lines of code,
+# we start by assigning the number of apples and pears
+# to the corresponding variables
+# then, calculate the total sum of fruits
+# and assign it to the total_fruits variable
+# and then print total_fruits
+
+apples = 5
+pears = 10
+
+total_fruits = apples + pears 
+
+print(total_fruits)
+
+``` 
+
+---
+
+# Highly important !
+
+The order matters! 
+
+Computers start executing your code from the top of and run all instructions squentially until the program reaches its end.
+
+So, assigning a value to a variable overrides its previous value.
+
+```python
+apples = 5    # puts 5 in apples
+print(apples) # prints apples' current value, 5
+apples = 10   # updates apples to 10
+print(apples) # prints apples' current value, 10
+apples = apples + 17 # updates apples to be the previous 
+                     # value of apples, 10, plus 17
+print(apples) # prints apples' current value, 27
+
+``` 
+
+---
+
+# Highly important ! (2)
+
+Note also that **=** (assignment) is different from **==** (comparison). 
+```python
+# = is used to assign a value to a variable and is asymetrical.
+# on the left, the variable that we want to set the value to
+# on the right, the value to be set
+apples = 5
+pears = 10 
+print(apples) # prints 5  
+print(pears) # prints 10
+
+apples = pears # the value can be the value in another variable
+print(apples) # prints 10
+apples = 2 * apples # or the result of an expression
+print(apples) # prints 20
+
+5 = apples # this is not valid, and will raise a SyntaxError.
+# remove the previous line of code so that the code can continue.
+# you can also just "comment it" by prefixing it with #
+
+# == is used to compare whether 
+print(apples == 5) # is apples equals to 5?
+print(5 == apples) # is 5 equals to apples?
+print(apples == 6) # is apples equals to 6?
+print(6 == apples) # is 6 equals to apples?
+
+```
+
+Think of the comparison operator (==), as you would think of the equals in math classes. While, in programming, think of the assignment operator (=) as updating the variable to have a certain value (and erasing the previous value).
+
+---
+# Let's do a quick exercise
+
+Suppose you have two variables **a** and **b**, and you want to swap their values from **a** to **b**.
+
+```python
+a = 5
+b = 10
+
+# swap the value of a for b, 
+# fill in this part
+# ... 
+
+print(a) # should print 10
+print(b) # should print 5
+
+```
+---
+# Let's do a quick exercise *(solution)*
+
+Suppose you have two variables **a** and **b**, and you want to swap their values from **a** to **b**.
+
+```python
+a = 5
+b = 10
+
+# we can use an auxiliar variable, c, 
+# to temporarily hold the value of a
+c = a # c becomes 5
+a = b # a becomes 10, i.e. b
+b = c # b becomes 5, i.e. a
+# if hadn't use c, then we would have lost 
+# the value of a, 5, when assigning b to a.
+
+print(a) # should print 10
+print(b) # should print 5
+
+```
+---
+# Types and Casting
+
+You might have noticed that in the "Hello World" example, we printed a text string ("Hello World") and in the latter examples we have put into variables and printed numbers or booleans (True/False).
+
+So.. can we do these operations with text, numbers and booleans interchangeably?
+
+Well, yes and no.. let's try
+
+```python
+print("Hello World" + 5)
+```
+In this case, python replies with a "TypeError", as it doesn't know how to add text with numbers.
+
+However, you can ask Python to convert the number to text, before adding them together
+```python
+print("Hello World" + str(5))
+```
+In this case, firstly, str converts 5 (number) into "5" (string) and then **concatenates** "Hello World" and "5", resulting in "Hello World5". <small>(note, we call this concatenation)</small>
+
+---
+
+# Types and Casting (2)
+
+We call this operation of converting from one type to another as **type casting**. Use **type(...)** to get the variable type.
+
+```python
+print(type("Some text string")) # str or string
+print(type(5)	# int or integer
+print(type(2.0)) # float
+print(type(True)) # bool
+```
+
+You can also cast to the different data types. Give it a try.
+
+```python
+print(type(int("Some text string"))) # this will raise an error
+print(type(int("5"))) # this will cast "5" to 5
+print(type(int(5.5))  # this will cast 5.5 to 5
+print(type(float("2.0"))  # float
+print(type(str(True)) # bool
+
+```
+Note again that operations depend on the types.
+```python
+print(2.0 == 2.0) # this is True
+print(2.0 == "2.0") # this is False
+print(2.0 == float("2.0")) # this is True
+print(2 == float("2.0")) # this is True
+print(2 + float("2.0")) # this sums
+print(str(2) + "2.0") # this concatenates
+
+```
+Give it a go and try different castings, operations types.
+
+---
+
+# Inputs
+
+Let's put it all together (inputs → program → outputs).
+
+In Python, you can ask a user to insert an input into a variable as follows:
+
+```python
+some_variable = input("A prompt to the user")
+```
+
+And thus, we can make our fruits sum a bit more interesting.. 
+
+```python
+pears = input("How many pears?")
+apples = input("How many apples?")
+
+# print(type(apples), type(pears))
+# note that apples and pears are now strings 
+# The input function always returns strings 
+
+apples = int(apples) # casting str to int
+pears = int(pears) # casting str to int
+
+total_fruits = apples + pears
+print("Total fruits: " + str(total_fruits))
+
+```
+Could you write this whole program in just 3 lines of code? what about just 1?
+<small>* not always having shorter code is better. Particularly when that makes the code harder to understand for programmers.</small>
+
+---
+# Exercises
+
+Write a program ...
+
+- Asks the user the necessary variables/inputs and calculates the weight-to-height ratio as **weight ÷ (height x height)**.
+- Calculates the hypotenuse of a right triangle **h = sqrt(a\*\*2 + b\*\*2)** 
+- Asks the total of the bill, how many people are eating/paying, how much you want to tip, and prints the total amount to pay and the amount per person.
+- Asks the user to inser a message and then replies back<br>**Have you said "&lt; user message &gt;"?**<br>With the user message being in between quotes.
+
+
+---
+class: center, middle
+# Part 2
+Control flow, loops and arrays
+
+---
+
+# If statement
+
+Often, we want that our program to do something **only** if some condition is true.
+
+
+```python
+apples = input("How many apples?")
+
+if apples > 100:
+    # This is executed only when apples > 100
+    print("That's a lot of apples")
+
+# This is executed in all scenarios
+print("End of the apples program.")
+
+```
+
+Here, the execution starts from the top, as before, and once it encounters the **if** statement, it checks the condition and if it is true than the nested block is executed. Note that, in Python, we use indentation to isolate what's to be guarded by the if statement from the rest.
+
+---
+
+# Elif, else
+
+Following **if** two more clauses can be used: **elif** (else if), as many times as you want, and **else**, only one time at most.
+
+The **elif** block is executed if all the conditions of the previous **if** or **elif** blocks are false and its condition is true.
+
+**Else** is always executed when all the previous **if** and **elif** blocks are false. 
+
+``` python
+if apples < 100:
+   print("That's less than 100 apples!")
+elif apples < 200:
+   print("Is greater or equal to 100 and lower then 200")
+elif apples < 300:
+   print("Is greater or equal to 200 and lower then 300")
+else:
+   print("It's greater or equal to 300")
+   
+print("End of the apples program.")
+```
+
+Note that only one of the statements is executed (the first with its condition being true), once the indented block ends, the program jumps to the next instruction after the if/elif/else block.
+
+---
+# Mix and match!
+
+Go ahead and try as many combinations of **if/elif/else** as you can think of. You can even add if blocks inside if blocks!
+
+```python
+if apples <= 100: 
+   print("apples is lower or equal to 100")
+    
+   if apples % 2 == 0:
+      print("and its an even number! wow")  
+   else:
+      print("and its an odd number!")    	
+else: 
+   print("apples is greater than 100")
+    
+   if apples % 2 == 0:
+      print("and its divisible by 2!")
+    
+   if apples % 3 == 0:
+      print("and its divisible by 3!")
+    
+   elif apples % 4 == 0:
+      print("and its divisible by 4!")
+   
+
+```
+---
+# Exercises
+
+- Write a program that asks a users for a number and tests whether it is odd or even. Print "Odd!" or "Even!" accordingly.
+- Write a program that asks a user for two numbers and for the result of its multiplication. Print "Correct!" if the user gets the multiplication correclty or "Wrong!" followed by the difference between the correct and guessed value, otherwise.
+- Ask the hour of the day and print the correct greeting accordingly "Good Morning", "Good Evening", "Good Afternoon", "Good Night". 
+
+
+---
+# Loops
+
+We code and program to automate stuff. And automating stuff has to do with figuring out how to do it once, and then having a machine repeating it as many times as we want.
+
+And that's where loops come in. There are many ways of constructing loops. But one simple way of doing it in Python is as follows.
+
+```python
+for i in range(10):
+   # the stuff we want to repeat!
+   print("Iteration " + str(i + 1) + " of 10")  
+
+```
+This means that, while we have written the stuff in the nested block once, the computer will execute it 10 times.
+
+	
+
+---
+class: center, middle
+# Part 3
+Functions and recursion
+
+---
+# Functions 
+
+As we have been seeing since the begining programs are just processes that take in inputs and generate outputs (inputs → program → outputs).
+
+In other words, we can think of programs as functions. Given some input variables we want our program to generate some outputs/actions/stuff.<br>
+<center><font size="5"> outputs = f(inputs)</font></center>
+
+And now, you might start realizing the why of the notation used by the **input(...)**, **type(...)**, **str(...)**, etc.. operations. They are functions!
+
+Note that while some functions such as **print(...)** don't output a value that can be assigned to a variable, they end up generating useful outputs in some other ways, by writing to the terminal, etc. Otherwise they would be useless. 
+
+---
+# Functions (2)
+
+This is where one main principle of programming kicks in: <strong>"abstraction"</strong>. 
+
+We can group a set/sequence of things and say thats one new thing! And vice-versa, we can think of a thing and break it down into multiple sub things (this is what we mostly do when programming).
+
+Say, "Move right leg, move left leg, & repeat until reaching a given goal". You mean .. walking to a goal? 
+
+```
+def walk(goal):
+   while not at goal:
+       move left leg
+       move right left
+
+```
+
+Allright, so now.. let's walk to the kitchen, and then the bathroom and then ...
+
+```
+   walk('kitchen')
+   walk('bathroom')
+   walk('bedroom')
+```
+
+We told the robot how to walk (we programmed it), and now we can ask it to go what ever we want! 
+
+---
+# Functions (3)
+
+And we can go even further! Say now  we want the want to tell the robot how to roam the house.
+
+```
+def roam_house(rooms):
+   for each room in rooms:
+      walk(room)
+```
+
+And this would be how we tell it to roam the house.
+```
+rooms = ['kitchen', 'bathroom', 'bedroom', 'livingroom']
+raom_house(rooms)
+```
+
+Here we have just used "pseudo-code". Its not even proper Python. And we haven't told the computer "how to move right/left leg". In programming, sometimes, your challange is going to be "how to specify/program some specific function/task". But probably most of the time, its how to look at stuff and break it down into sub stuffs, that you/the pc already knows how to do. 
+
+And on, and on and on..  And this is how computing systems work essentially, and what's programming all about. 
+Actually, when you call a **print(xx)**, or any other function, there's an entire chain of functions calling each other that go from your program, to the operating system, to the processor inside your computer (that only knows about electrical pulses) to your screen (that only knows how to turn on/off pixels), the internet, etc. But that's a discussion for another day.
+
+
+---
+# Functions in Python
+
+And now, we can start 
+
+```python
+def sum_to(until):
+   s = 0
+   
+   for i in range(until):
+      s = s + i
+      
+   return sum
+
+print("Sum until 10: " + str(sum_to(10)))
+print("Sum until 100: " + str(sum_to(100)))
+```
+

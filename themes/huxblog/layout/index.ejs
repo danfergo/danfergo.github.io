@@ -2,36 +2,41 @@
 layout: page
 ---
 <!-- Main Content -->
-
+<!--<h1 style="margin-top:3rem; margin-bottom: 2rem;">Featured</h1>-->
+<div style="height:1rem"></div>
 <% site.tags.findOne({name: 'featured'}).posts.sort('date').reverse().each(function(post){ %>
-<div class="index post-preview">
-    <div class="img-preview">
-        <a href="<%- config.root %><%- post.path %>"
-           title="<%- post.title || "Untitled" %>"
-           style="background-image: url(<%= post.path + post.cover  %>)"></a>
-    </div>
-    <div class="text-preview">
-        <a href="<%- config.root %><%- post.path %>">
-            <h2 class="post-title">
-                <%- post.title || "Untitled" %>
-            </h2>
-            <h3 class="post-subtitle">
-                <%- post.subtitle || "" %>
-            </h3>
-
+    <div class="index post-preview">
+        <div class="img-preview">
+            <a href="<%- config.root %><%- post.path %>"
+               title="<%- post.title || "Untitled" %>"
+               style="background-image: url(<%= post.path + post.cover %>)"></a>
+        </div>
+        <div class="text-preview">
+            <a href="<%- config.root %><%- post.path %>">
+                <h2 class="post-title">
+                    <%- post.title || "Untitled" %>
+                </h2>
+            </a>
             <div class="post-content-preview">
-                <%- truncate(strip_html(post.content), {length: 200, omission: ' '}) %>...
+                <a href="<%- config.root %><%- post.path %>" style="text-decoration: none;">
+                    <%- truncate(strip_html(clean_html(post.abstract ?? post.content)), {
+                        length: 300,
+                        omission: '...'
+                    }) %>
+                </a>
             </div>
-        </a>
-        <p class="post-meta">
-            <!--Posted by <%- post.author || config.author %> on-->
-            <%= post.date.format(config.date_format) %>
-        </p>
-    </div>
-</div>
-<hr>
-<% }); %>
+            <div class="post-meta" style="padding-top:1rem;">
+                <div><%- authors(post.authors) %> &bull;
+                    <span style="word-break: keep-all; white-space: nowrap;">
+                        <%= post.date.format(config.date_format) %>
+                    </span>
+                </div>
+            </div>
 
+        </div>
+    </div>
+    <!--<hr>-->
+<% }); %>
 
 <!-- Pager -->
 

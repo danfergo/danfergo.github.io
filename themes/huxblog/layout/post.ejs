@@ -8,217 +8,288 @@ layout: layout
 
 <!-- Post Header -->
 <!--<style type="text/css">-->
-    <!--header.intro-header{-->
-        <!--background-image: url('<%= page["header-img"] || config.root + config["header-img"] %>')-->
-    <!--}-->
+<!--header.intro-header{-->
+<!--background-image: url('<%= page["header-img"] || config.root + config["header-img"] %>')-->
+<!--}-->
 <!--</style>-->
-<header class="intro-header" >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
-                        <% page.tags.filter(t => t.name != 'featured').forEach(function(tag){ %>
-                          <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
-                        <% }) %>
-                    </div>
-                    <h1><%= page.title %></h1>
-                    <h2 class="subheading"><%= page.subtitle || "" %></h2>
-                    <span class="meta">
-                        <!--Posted by <%- page.author || config.author %> on -->
-                        <%= page.date.format(config.date_format) %>
-                    </span>
+<header class="intro-header">
+    <div class="center-wrapper">
+        <div class="post-heading article-wrapper">
+            <div class="tags">
+                <% page.tags.filter(t => t.name != 'featured').forEach(function(tag){ %>
+                    <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>"
+                       title="<%= tag.name %>"><%= tag.name %></a>
+                <% }) %>
+            </div>
+            <h1><%= page.title %></h1>
+            <h2 class="subheading"><%= page.subtitle || "" %></h2>
+            <div class="meta">
+                <% if (page.authors && page.authors.length > 0){ %>
+                    <div><%- authors(page.authors) %></div>
+                <% } %>
+                <div style="padding-top:1rem">
+                    <%= page.date.format(config.post_date_format) %>
                 </div>
+                <!--Posted by <%- page.author || config.author %> on -->
             </div>
         </div>
+
+
+        <div class="center-wrapper article-wrapper" style="padding: 1rem 0;">
+            <% if (page.code_url && page.code_url.length > 0){ %>
+                <a href="<%= page.code_url %>">
+                    <button class="btn header-btn collapsable-btn">
+                        <i class="fa fa-github"></i>
+                        <span>Code</span>
+                    </button>
+                </a>
+            <% } %>
+            <% if (page.downloads && page.downloads.length > 0){ %>
+                <button class="btn header-btn collapsable-btn" data-for="downloads"
+                        style="">
+                    <i class="fa fa-download"></i>
+                    <span>Assets</span>
+                </button>
+            <% } %>
+            <% if (page.cite_this && page.cite_this.length > 0){ %>
+                <button class="btn header-btn collapsable-btn" data-for="cite-this">
+                    <i class="fa fa-quote-left"></i>
+                    <span>Cite</span>
+                </button>
+            <% } %>
+        </div>
     </div>
+    <div style="background: #f3f3f3">
+        <div class="center-wrapper article-wrapper">
+            <% if (page.downloads && page.downloads.length > 0){ %>
+                <div class="collapsable-blind" data-of="downloads">
+                    <div style="padding: 2rem 0;" class="inner-container">
+                        <% page.downloads.forEach((download) => { %>
+                            <div style="display: grid; grid-template-columns: 1fr auto; grid-gap: 1rem;">
+                                <div>
+                                    <strong><%= download.title %>:</strong> <%= download.description %>
+                                </div>
+                                <div>
+                                    <a href="<%= download.href %>"><%= download.btn %></a>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+            <% } %>
+            <% if (page.cite_this && page.cite_this.length > 0){ %>
+                <div class="collapsable-blind" data-of="cite-this">
+                    <div style="padding: 2rem 0;" class="inner-container">
+                        <% (page.cite_this || []).forEach(function(citation){ %>
+                            <strong><a href="http://doi.org/<%= citation.doi %>"><%= citation.title %></a></strong>
+                            <pre style="background: #f7f7f7; border-radius: 0.3rem; padding:0.8rem; margin: 0;"><%= bibtex_citation(citation) %></pre>
+                        <% }); %>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <style>
+        .header-btn,
+        .header-btn:hover,
+        .header-btn:active,
+        .header-btn:visited,
+        .header-btn:focus {
+            border-radius: 3rem;
+            background: black;
+            border: 2px solid white;
+            padding: 0.8rem 1.6rem;
+            color: white;
+            margin-left: 0.5rem;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        @media (max-width: 767px) {
+            .header-btn,
+            .header-btn:hover,
+            .header-btn:active,
+            .header-btn:visited,
+            .header-btn:focus {
+                background: transparent;
+                font-size: 1.5rem;
+                display: inline-flex;
+                height: 3.5rem;
+                width: 3.5rem;
+                border-radius: 999px;
+                align-items: center;
+                justify-content: center;
+                border: none;
+            }
+
+            .header-btn span {
+                display: none;
+            }
+        }
+
+        .collapsable-blind {
+            height: 0;
+            overflow: hidden;
+            box-sizing: content-box;
+            transition: ease all 0.5s;
+        }
+
+        .collapsable-blind.open {
+            height: auto;
+        }
+
+    </style>
+    <script type="text/javascript">
+        const collapsableBtns = document.querySelectorAll('.collapsable-btn');
+        const collapsableBlinds = document.querySelectorAll('.collapsable-blind');
+
+        let openingTimeout = null;
+
+        collapsableBtns.forEach(btn => {
+            btn.addEventListener('click', (ev) => {
+                const collapsableName = btn.dataset.for;
+                const citeThisBlind = document.querySelector(`.collapsable-blind[data-of='${collapsableName}']`);
+
+                clearTimeout(openingTimeout);
+
+                let sameClosing = false;
+                collapsableBlinds.forEach(blind => {
+                    if (blind.classList.contains('opening') || blind.classList.contains('open')) {
+                        if (blind.dataset.of === collapsableName) {
+                            sameClosing = true;
+                        }
+                        const innerContent = blind.querySelector('.inner-container');
+                        blind.style.height = innerContent.clientHeight + 'px';
+                        blind.classList.remove('opening');
+                        blind.classList.remove('open');
+                        setTimeout(() => {
+                            blind.style.removeProperty('height');
+                        })
+                    }
+                });
+
+                if (!sameClosing) {
+                    const innerContent = citeThisBlind.querySelector('.inner-container');
+                    citeThisBlind.style.height = innerContent.clientHeight + 'px';
+                    citeThisBlind.classList.add('opening');
+                    openingTimeout = setTimeout(() => {
+                        citeThisBlind.classList.remove('opening');
+                        citeThisBlind.classList.add('open');
+                        citeThisBlind.style.removeProperty('height');
+                    }, 500);
+                }
+            })
+        });
+    </script>
 </header>
 
 <!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
+<!-- Post Container -->
+<div class="center-wrapper post-container">
+    <article>
+        <%- init_cap(page.content) %>
+    </article>
 
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container">
 
-                <%- page.content %>
+    <hr>
+    <!--    <ul class="pager">-->
+    <!--        <% if (page.prev){ %>-->
+    <!--            <li class="previous">-->
+    <!--                <a href="<%- config.root %><%- page.prev.path %>" data-toggle="tooltip" data-placement="top"-->
+    <!--                   title="<%- page.prev.title %>">&larr; Previous Post</a>-->
+    <!--            </li>-->
+    <!--        <% } %>-->
+    <!--        <% if (page.next){ %>-->
+    <!--            <li class="next">-->
+    <!--                <a href="<%- config.root %><%- page.next.path %>" data-toggle="tooltip" data-placement="top"-->
+    <!--                   title="<%- page.next.title %>">Next Post &rarr;</a>-->
+    <!--            </li>-->
+    <!--        <% } %>-->
+    <!--    </ul>-->
 
-                <hr>
-
-                <!--<% if(config['duoshuo_share'] && config['duoshuo_username']) { %>-->
-                <!--&lt;!&ndash; Share start &ndash;&gt;-->
-                <!--</style>-->
-                <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="<%= page.path %>"
-                    data-title="<%= page.title %>"
-                    data-url="<%= page.permalink %>"
-                    data-images="<%= page["header-img"] ? page.permalink + page["header-img"] : '' %>"
-                    data-content="<%- truncate(strip_html(page.content), {length: 50, omission: '...'}) %> | <%= config.SEOTitle %> " >
-                    <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
-                    </div>
-                <hr>
-                </div>
-                <!-- 多说 Share end-->
-                <% } %>
-
-                <ul class="pager">
-                    <% if (page.prev){ %>
-                        <li class="previous">
-                            <a href="<%- config.root %><%- page.prev.path %>" data-toggle="tooltip" data-placement="top" title="<%- page.prev.title %>">&larr; Previous Post</a>
-                        </li>
-                    <% } %>
-                    <% if (page.next){ %>
-                        <li class="next">
-                            <a href="<%- config.root %><%- page.next.path %>" data-toggle="tooltip" data-placement="top" title="<%- page.next.title %>">Next Post &rarr;</a>
-                        </li>
-                    <% } %>
-                </ul>
-
-                <% if(config['duoshuo_username']) { %>
-                <!-- 多说评论框 start -->
-                <div class="comment">
-                    <div class="ds-thread"
-                        data-thread-key="<%= page.path %>"
-                        data-title="<%= page.title %>"
-                        data-url="<%= page.permalink %>" >
-                    </div>
-                </div>
-                <!-- 多说评论框 end -->
-                <% } %>
-
-                <% if(config['disqus_username']) { %>
-                <!-- disqus 评论框 start -->
-                <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
-                </div>
-                <!-- disqus 评论框 end -->
-                <% } %>
-
-            </div>
-    <!-- Side Catalog Container -->
-        <% if (page.catalog) { %>
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
-                </div>
-            </div>
-        <% } %>
-
-    <!-- Sidebar Container -->
-
-            <!--<div class="-->
-                <!--col-lg-3 col-lg-offset-0-->
-                <!--col-md-3 col-md-offset-0-->
-                <!--col-sm-12-->
-                <!--col-xs-12-->
-                <!--sidebar-container-->
-            <!--">-->
-
-                <!--&lt;!&ndash; Featured Tags &ndash;&gt;-->
-                <!--<% if(config['featured-tags']) { %>-->
-                <!--<section>-->
-                    <!--&lt;!&ndash; no hr &ndash;&gt;-->
-                    <!--<h5><a href="<%= config.root %>tags/">FEATURED TAGS</a></h5>-->
-                    <!--<div class="tags">-->
-                       <!--<% page.tags.forEach(function(tag){ %>-->
-                          <!--<a class="tag" href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>-->
-                        <!--<% }) %>-->
-                    <!--</div>-->
-                <!--</section>-->
-                <!--<% }%>-->
-
-                <!--&lt;!&ndash; Friends Blog &ndash;&gt;-->
-                <!--<% if(config.friends) { %>-->
-                <!--<hr>-->
-                <!--<h5>FRIENDS</h5>-->
-                <!--<ul class="list-inline">-->
-
-                    <!--<% config.friends.forEach(function(friend){ %>-->
-                        <!--<li><a href="<%= friend.href %>" target="_blank"><%= friend.title %></a></li>-->
-                    <!--<% }); %>-->
-                <!--</ul>-->
-                <!--<% }%>-->
-            <!--</div>-->
-
+    <% if(config['disqus_username']) { %>
+        <!-- disqus 评论框 start -->
+        <div class="comment">
+            <div id="disqus_thread" class="disqus-thread"></div>
         </div>
-    </div>
-</article>
-
-
+        <!-- disqus 评论框 end -->
+    <% } %>
+</div>
+<!--&lt;!&ndash; Side Catalog Container &ndash;&gt;-->
+<!--<% if (page.catalog) { %>-->
+<!--    <div class="-->
+<!--                col-lg-2 col-lg-offset-0-->
+<!--                visible-lg-block-->
+<!--                sidebar-container-->
+<!--                catalog-container">-->
+<!--        <div class="side-catalog">-->
+<!--            <hr class="hidden-sm hidden-xs">-->
+<!--            <h5>-->
+<!--                <a class="catalog-toggle" href="#">CATALOG</a>-->
+<!--            </h5>-->
+<!--            <ul class="catalog-body"></ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--<% } %>-->
 
 <% if(config['disqus_username']) { %>
-<!-- disqus start -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "<%= config['disqus_username'] %>";
-    var disqus_identifier = "<%= page.permalink %>";
-    var disqus_url = "<%= page.permalink %>";
+    <!-- disqus start -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
 
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus end -->
+        var disqus_shortname = "<%= config['disqus_username'] %>";
+        var disqus_identifier = "<%= page.permalink %>";
+        var disqus_url = "<%= page.permalink %>";
+
+        (function () {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <!-- disqus end -->
 <% } %>
-
-
 <% if(config['anchorjs']) { %>
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script>
-    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options = {
-          visible: 'always',
-          placement: 'right',
-          icon: '#'
-        };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-    })
-</script>
-<style>
-    /* place left on bigger screen */
-    @media all and (min-width: 800px) {
-        .anchorjs-link{
-            position: absolute;
-            left: -0.75em;
-            font-size: 1.1em;
-            margin-top : -0.1em;
+    <!-- async load function -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) {
+                o.addEventListener('load', function (e) {
+                    c(null, e);
+                }, false);
+            }
+            s.parentNode.insertBefore(o, s);
         }
-    }
-</style>
+    </script>
+    <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+    <script>
+        async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function () {
+            anchors.options = {
+                visible: 'always',
+                placement: 'right',
+                icon: '#'
+            };
+            anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+        })
+    </script>
+    <style>
+        /* place left on bigger screen */
+        @media all and (min-width: 800px) {
+            .anchorjs-link {
+                position: absolute;
+                left: -0.75em;
+                font-size: 1.1em;
+                margin-top: -0.1em;
+            }
+        }
+    </style>
 <% } %>

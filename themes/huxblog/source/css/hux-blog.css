@@ -1,15 +1,17 @@
-@media (min-width: 1200px) {
-    .post-container,
-    .sidebar-container {
-        padding-right: 5%;
-    }
+html {
+    font-size: initial !important;
 }
 
-@media (min-width: 992px) {
-    .post-container {
-        padding-right: 5%;
-    }
+body {
+    font-size: 1rem !important;
 }
+
+.center-wrapper {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 
 .responsive-sidebar {
     margin-top: 100px;
@@ -23,10 +25,10 @@
     }
 }
 
-.sidebar-container {
-    /* color: #bfbfbf; */
-    font-size: 14px;
-}
+/*.sidebar-container {*/
+/* color: #bfbfbf; */
+/*font-size: 14px;*/
+/*}*/
 
 .sidebar-container a {
     font-weight: bold;
@@ -61,26 +63,32 @@
     color: #777;
 }
 
-.sidebar-container .short-about img {
+.short-about img {
     width: 100%;
     display: block;
     border-radius: 99999px;
-    margin-top: 10px;
+    max-width: 10rem;
+    margin: 1rem auto 1rem;
 }
 
-@media (min-width: 768px) {
-    .sidebar-container .short-about img {
-        margin-bottom: 0.8em;
-        width: 80%;
-    }
+.short-about p {
+    max-width: 40rem;
+    text-align: center;
+    margin: 0 auto;
+    color: #777;
 }
 
-.sidebar-container .short-about p {
-    margin-top: 0px;
-    margin-bottom: 0px;
+.short-about:not(:first-child) {
+    max-width: 30rem;
+    margin: 0 auto 3rem;
 }
 
-.sidebar-container .short-about .list-inline > li {
+.short-about a {
+    font-weight: bold;
+}
+
+
+.short-about .list-inline > li {
     padding-left: 0px;
 }
 
@@ -90,8 +98,8 @@ body {
        *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
        */
     font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
-    line-height: 1.7;
-    font-size: 16px;
+    line-height: 1.5;
+    /*font-size: 1;*/
     color: #404040;
     overflow-x: hidden;
 }
@@ -135,12 +143,49 @@ a img:focus {
 }
 
 article {
-    overflow-x: hidden;
-    text-align: justify;
+    text-align: left;
+    font-family: serif;
+
+}
+
+article,
+.article-wrapper {
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+article p > .init-cap {
+    font-size: 6rem;
+    vertical-align: bottom;
+    float: left;
+    display: block;
+    line-height: 5rem;
+    margin-right: 1rem;
+}
+
+article p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.5rem;
 }
 
 article a {
     font-weight: bold;
+}
+
+article h2:not(:first-child) {
+    margin-top: 10rem;
+}
+
+article #footnotes hr {
+    display: none;
+}
+
+article #footnotes * {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.7rem;
+    text-align: justify;
 }
 
 blockquote {
@@ -167,6 +212,7 @@ br + small.img-hint {
 img.shadow {
     box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;
 }
+
 
 @media screen and (max-width: 768px) {
     select {
@@ -279,6 +325,73 @@ pre code {
     line-height: 2;
     margin-top: 20px;
 }
+
+.post-container figure {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100vw - 0.5rem);
+    max-width: 80rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem #eee, 0 0 2rem #cfcfcf;
+    margin: 3rem 0 !important;
+}
+
+.post-container figure iframe,
+.post-container figure video,
+.post-container figure img{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.post-container figure.fig-no-caption iframe,
+.post-container figure.fig-no-caption video,
+.post-container figure.fig-no-caption img{
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+
+.post-container figure figcaption,
+.post-container figure.highlight figcaption {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    background: #222;
+    color: #eee;
+    padding: 1.5rem 1.5rem 2rem;
+    font-family: sans-serif;
+    font-size: 1rem;
+    overflow: hidden;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.post-container figure.highlight {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: stretch;
+    align-items: stretch;
+    padding: 0;
+    border: none;
+}
+
+.post-container figure.highlight > div {
+    padding: 1rem;
+    border: none;
+    margin: 0;
+}
+
+.post-container .figure + p {
+    margin-top: -1rem;
+}
+
+.post-container .highlight,
+.post-container .highlight .line {
+    font-size: 1rem;
+}
+
+
 
 @media only screen and (max-width: 767px) {
     .navbar-default .navbar-collapse {
@@ -490,7 +603,8 @@ pre code {
 .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
-    padding: 85px 0 55px;
+    text-align: center;
+    padding: 6rem 0 2rem;
     color: white;
 }
 
@@ -498,7 +612,8 @@ pre code {
     .intro-header .site-heading,
     .intro-header .post-heading,
     .intro-header .page-heading {
-        padding: 150px 0;
+        /*padding: 150px 0;*/
+        padding: 12rem 0 3rem;
     }
 }
 
@@ -520,30 +635,29 @@ pre code {
 .intro-header .site-heading h1,
 .intro-header .page-heading h1 {
     margin-top: 0;
-    font-size: 50px;
+    font-size: 4rem;
+    /*font-style: italic;*/
+    /*font-family: serif;*/
 }
 
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
-    /* Hux learn from
-       *     TypeIsBeautiful,
-       *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-       */
-    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
-    line-height: 1.7;
-    font-size: 18px;
+    font-size: 1.5rem;
     line-height: 1.1;
     display: block;
     font-weight: 300;
     margin: 10px 0 0;
+    font-family: 'Lora', 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 300;
 }
 
-@media only screen and (min-width: 768px) {
-    .intro-header .site-heading h1,
-    .intro-header .page-heading h1 {
-        font-size: 80px;
-    }
-}
+/*@media only screen and (min-width: 768px) {*/
+/*    .intro-header .site-heading h1,*/
+/*    .intro-header .page-heading h1 {*/
+/*        font-size: 80px;*/
+/*    }*/
+/*}*/
 
 .intro-header .post-heading h1 {
     font-size: 30px;
@@ -598,15 +712,17 @@ pre code {
 .index.post-preview {
     display: grid;
     grid-template-columns: 20rem auto;
+    margin-bottom: 1.5rem;
 }
 
 .index.post-preview > .img-preview a {
     display: block;
-    padding-bottom: 90%;
+    padding-bottom: 80%;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    margin: 2rem 2rem 0 0;
+    margin: 0 2rem 0 0;
+    border-radius: 0.3rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -617,6 +733,7 @@ pre code {
     .index.post-preview > .img-preview a {
         margin: 2rem 0 0 0;
         padding-bottom: 70%;
+        margin-bottom: 1rem;
     }
 
 }
@@ -634,8 +751,9 @@ pre code {
 .post-preview > .text-preview > a > .post-title {
     font-size: 21px;
     line-height: 1.3;
-    margin-top: 30px;
+    /*margin-top: 30px;*/
     margin-bottom: 8px;
+    margin-top: 0;
 }
 
 .post-preview > .text-preview > a > .post-subtitle {
@@ -663,8 +781,8 @@ pre code {
 
 @media only screen and (min-width: 768px) {
     .post-preview > .text-preview > a > .post-title {
-        font-size: 26px;
-        line-height: 1.3;
+        font-size: 1.7rem;
+        line-height: 2rem;
         margin-bottom: 10px;
     }
 
@@ -678,20 +796,21 @@ pre code {
 }
 
 .post-content-preview {
-    font-size: 13px;
-    font-style: italic;
-    color: #a3a3a3;
+    color: #333;
+    font-size: 1.5rem;
+    font-family: serif;
+    padding-right: 2rem;
 }
 
 /*.post-content-preview:hover {*/
 /*color: #0085a1;*/
 /*}*/
 
-@media only screen and (min-width: 768px) {
-    .post-content-preview {
-        font-size: 14px;
-    }
-}
+/*@media only screen and (min-width: 768px) {*/
+/*    .post-content-preview {*/
+/*        font-size: 14px;*/
+/*    }*/
+/*}*/
 
 .section-heading {
     font-size: 36px;
@@ -701,7 +820,7 @@ pre code {
 
 .caption {
     text-align: center;
-    font-size: 14px;
+    /*font-size: 14px;*/
     padding: 10px;
     font-style: italic;
     margin: 0;
@@ -711,17 +830,18 @@ pre code {
 }
 
 footer {
-    font-size: 20px;
-    padding: 50px 0 65px;
+    /*font-size: 20px;*/
+    padding: 15rem 0 15rem;
 }
 
 footer .list-inline {
+    font-size: 2rem;
     margin: 0;
     padding: 0;
 }
 
 footer .copyright {
-    font-size: 14px;
+    /*font-size: 14px;*/
     text-align: center;
     margin-bottom: 0;
 }
@@ -736,7 +856,7 @@ footer .copyright {
 /*}*/
 
 .floating-label-form-group {
-    font-size: 14px;
+    /*font-size: 14px;*/
     position: relative;
     margin-bottom: 0;
     padding-bottom: 0.5em;
@@ -775,7 +895,7 @@ footer .copyright {
 }
 
 .floating-label-form-group::not(:first-child) {
-    padding-left: 14px;
+    /*padding-left: 14px;*/
     border-left: 1px solid #eeeeee;
 }
 
@@ -800,7 +920,7 @@ form .row:first-child .floating-label-form-group {
     font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
     line-height: 1.7;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 800;
     letter-spacing: 1px;
     border-radius: 0;
@@ -844,7 +964,7 @@ form .row:first-child .floating-label-form-group {
 @media only screen and (min-width: 768px) {
     .pager li > a,
     .pager li > span {
-        font-size: 14px;
+        /*font-size: 14px;*/
         padding: 15px 25px;
     }
 }
@@ -1075,7 +1195,7 @@ body {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 1.5em auto 1.6em auto;
+    /*margin: 0.5rem auto;*/
 }
 
 .post-container video {
@@ -1191,6 +1311,8 @@ body {
 }
 
 .page-fullscreen .intro-header {
+
+
     position: fixed;
     left: 0;
     top: 0;
