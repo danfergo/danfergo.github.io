@@ -432,11 +432,13 @@
           </figure>
 <h2 id="Experimental-Setup"><a href="#Experimental-Setup" class="headerlink" title="Experimental Setup"></a>Experimental Setup</h2><p>To produce the necessary real datasets, a GelSight sensor is mounted onto a Fused Deposition Modeling (FDM) 3D printer A30 from Geeetech. A set of objects with different shapes on the top is designed and 3D printed using the Form 2 Stereolithography (SLA) 3D printer. A Virtual World comprised of a FDM printer, a GelSight sensor and a set of virtual objects, is also set up. Identical real and virtual datasets are then collected.</p>
 <p>These include the STL files for printing the 21 set of objects and support mount,<br>the raw real and virtual datasets, and the aligned datasets using the per-object alignment method.<br>Please refer to the paper for more details about the experiments.</p>
-
-<video width="600" height="300" controls>
-  <source src="data_collection.webm" type="video/mp4">
-Your browser does not support the video tag.</video>
-
+<figure class="fig-caption">
+            <video width="600" height="300" controls style="display: block;">
+                          <source src="/gelsight-simulation/data_collection.webm" type="video/webm">
+                          <div style="padding:1rem;">Your browser does not support the video tag.</div>
+                      </video>
+            <figcaption><strong>Video 1. </strong> Identical datasets are collected both in the real world and simulation. In the real world, the raw GelSight tactile images are collected, in simulation, depth maps are collected for the offline generation of the synthetic datasets.</figcaption>
+          </figure>
 <figure class="fig-caption">
             <img style="width:100%; margin:0;padding: 1%;" src="/gelsight-simulation/object_set.jpg">
             <figcaption><strong>Figure 4. </strong> The used objects set: Hexagon, Dot-in, Moon, Large Sphere, Pacman, Flat Slab, Wave, Cylinder, Triangle, Random Prism, Line, Torus, Curved Surface, Dots, Cone, Small Sphere, Rectangular Prism, Side Cylinder, Open Shell, Parallel lines and Crossed Lines.</figcaption>
@@ -454,8 +456,8 @@ rk during training, after perturbing the depth-map  with the randomly distorted 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen></iframe>
-            <figcaption><strong>Video 1. </strong> This work has been published at RA-L and ICRA 2021<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Daniel Fernandes Gomes, Paolo Paoletti and Shan Luo, &#65282;Generation of GelSight Tactile Images for Sim2Real Learning&#65282;,  **[RA Letters](https://ieeexplore.ieee.org/abstract/document/9369877)**, **[ArXiv preprint](https://arxiv.org/abs/2101.07169)**
-">[1]</span></a></sup>. Checkout our presentation at the conference.</figcaption>
+            <figcaption><strong>Video 2. </strong> This work has been published at RA-L and ICRA 2021<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Daniel Fernandes Gomes, Paolo Paoletti and Shan Luo, &#65282;Generation of GelSight Tactile Images for Sim2Real Learning&#65282;,  **[RA Letters](https://ieeexplore.ieee.org/abstract/document/9369877)**, **[ArXiv preprint](https://arxiv.org/abs/2101.07169)**
+">[1]</span></a></sup>. Checkout our presentation at the ICRA conference.</figcaption>
           </figure>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Paolo Paoletti and Shan Luo, ＂Generation of GelSight Tactile Images for Sim2Real Learning＂,  <strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/9369877">RA Letters</a></strong>, <strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2101.07169">ArXiv preprint</a></strong><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Daniel Fernandes Gomes, Achu Wilson and Shan Luo, ＂GelSight Simulation for Sim2Real Learning＂, ViTac Workshop ICRA 2019. <strong><a target="_blank" rel="noopener" href="http://wordpress.csc.liv.ac.uk/smartlab/wp-content/uploads/sites/5/2019/06/ICRA2019ViTac_paper_8.pdf">paper</a></strong><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>
     </article>
