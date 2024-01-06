@@ -67,8 +67,6 @@ This GelSight Simulation method was firstly proposed at the [2019 ICRA ViTac Wor
 
 {% embed_figure image:pad vitac2019workshop.jpg 'Real and synthetic tactile samples next to the corresponding experimental setup, as in the first work[^1]. experimental setup. Samples were collected using ordinary objects, and the experimental setup consisted on a GelSight 2014 installed on a UR5 robotic arm.'%}
 
-
-
 ## Method
 
 {% embed_figure image heightmap.jpg 'Comparison of different methods for approximating elastomer deformations: without any smoothing effects (***Before Smoothing***), smoothed with a single Gaussian filter (***Single Gaussian***) and smoothed with the DoG (***Difference of Gaussians***).' %}
@@ -81,18 +79,9 @@ These include the STL files for printing the 21 set of objects and support mount
 the raw real and virtual datasets, and the aligned datasets using the per-object alignment method.
 Please refer to the paper for more details about the experiments.
 
-{% raw %}
-<video width="600" height="300" controls>
-  <source src="data_collection.webm" type="video/mp4">
-Your browser does not support the video tag.</video>
-{% endraw %}
-
+{% embed_figure video data_collection.webm 'Identical datasets are collected both in the real world and simulation. In the real world, the raw GelSight tactile images are collected, in simulation, depth maps are collected for the offline generation of the synthetic datasets. ' %}
 
 {% embed_figure image:pad object_set.jpg 'The used objects set: Hexagon, Dot-in, Moon, Large Sphere, Pacman, Flat Slab, Wave, Cylinder, Triangle, Random Prism, Line, Torus, Curved Surface, Dots, Cone, Small Sphere, Rectangular Prism, Side Cylinder, Open Shell, Parallel lines and Crossed Lines.' %}
-
-
-
-
 
 
 ## Sim2Real transfer learning 
@@ -102,7 +91,7 @@ One aspect to consider in the *Sim2Real* learning is the *Sim2Real* gap that res
 {% embed_figure image:pad texture_augmented.jpg 'On the top row, four of the twelve textures created to perturb the captured virtual depth-maps, to address the *Sim2Real* gap.  On the bottom row, corresponding augmented samples fed to the Neural Netwo
 rk during training, after perturbing the depth-map  with the randomly distorted texture, generating the RGB tactile sample using the proposed method, and applying a random augmentation transformation.' %}
 
-{% embed_figure youtube tr6orOcGic0 'This work has been published at RA-L and ICRA 2021[^1]. Checkout our presentation at the conference.'%}
+{% embed_figure youtube tr6orOcGic0 'This work has been published at RA-L and ICRA 2021[^1]. Checkout our presentation at the ICRA conference.'%}
 
 
 ## References

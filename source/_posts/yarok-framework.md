@@ -76,17 +76,80 @@ Similarly to xacro in the Robotic Operating System (ROS), Yarok adds config vari
 </for>
 {% endcodeblock %}
 
+## MJC Interface
+
+
+{% codeblock lang:python %}
+from yarok import interface
+
+@interface(
+    defaults={
+        'conf1': 'some_value'
+    }
+)
+class MyGripperInterfaceMJC:
+    def __init__(self, mjc: InterfaceMJC, config: ConfigBlock):
+        self.conf1 = config['conf1'] 
+        self.mjc = mjc # wraps MuJoCo Python API
+
+    def move(q):
+        self.q = q
+
+    def step(): # called every update step
+         # handles referencing/scope for multiple component instances
+         current_q = self.interface.sensordata()
+         self.mjc.set_ctrl('joint1', self.q)
+        
+         # for cameras, converts depth to meters
+         rgb, depth = self.mjc.read_camera('camera1')
+
+{% endcodeblock %}
+
 ## Running your environment
 
 Once you have your components tree defined, you just wrap it onto a Platform object and run it. By default, Yarok runs on the simulation environment, loading MuJoCo interfaces, but you can also configure it to run on "real" environment, and it will load the real interfaces. This way, you can write your behaviours once and run them both in simulation and the real world. 
 
 {% codeblock lang:python %}
-from yarok import Platform
+from yarok import Platform, PlatformMJC
 
 Platform.create({
     'world': MyExperimentWorld,
-    'behaviour': SomeBehaviour
+    'behaviour': SomeBehaviour,
+    'defaults': {
+        'environment': 'sim' # or 'real'
+    },
+    'environments': {
+       'sim': {
+            'platform': PlatformMJC,
+            'components': {
+                 '/gripper1': {
+                     'serial_path': '/dev/ttyUSB0' 
+                      # ... etc
+                 }
+            }
+        }
+    }
 }).run()
+{% endcodeblock %}
+
+## Example
+{% codeblock lang:python %}
+<body euler="0 0 1.57" pos="-0.15 0.4 0.3">
+    <ur5e name='arm'>
+       <robotiq-2f85 name="gripper" parent="ee_link"> 
+          <body parent="right_tip"
+                pos="0.02 -0.017 0.053" 
+                xyaxes="0 -1 0 1 0 0">
+                <geltip name="left_geltip"/>
+           </body>
+           <body parent="left_tip"
+                 pos="-0.02 -0.017 0.053" 
+                 xyaxes="0 1 0 -1 0 0">
+                <geltip name="right_geltip"/>
+            </body>
+        </robotiq-2f85> 
+    </ur5e> 
+</body>
 {% endcodeblock %}
 
 In this post we have just give you a quick glance at what you can do with Yarok, if you would like to learn more and getting started using it, visit the [project repository](https://github.com/danfergo/yarok) and start experimenting.
