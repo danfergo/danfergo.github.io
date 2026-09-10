@@ -1,0 +1,91 @@
+.embed-figure-carousel-wrapper {
+    position: relative;
+}
+
+.embed-figure-carousel {
+    display: flex;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+.embed-figure-carousel > div {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    background-color: #efefef;
+}
+
+.embed-figure-carousel-wrapper .nav-button {
+    padding: 0 1rem;
+    opacity: 0;
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*transform: translateY(-50%);*/
+    /*font-size: 2rem;*/
+    /*line-height: 2rem;*/
+    cursor: pointer;
+    border-radius: 999px;
+    /*width: 4rem;*/
+    /*height: 4rem;*/
+    /*display: none;*/
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /*box-shadow: #525252 0px 0px 1rem;*/
+    /*background: #333;*/
+    /*color: #eee;*/
+    transition: ease opacity 0.3s;
+}
+
+.embed-figure-carousel-wrapper .nav-button > i {
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-top: 0.3rem;
+}
+
+.embed-figure-carousel-wrapper .navigation {
+    padding-bottom: 0.5rem;
+    display: grid;
+    grid-template-columns: 5rem 1fr 5rem;
+
+}
+
+.embed-figure-carousel-wrapper .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    height: 0.5rem;
+}
+
+.embed-figure-carousel-wrapper .pagination button {
+    background-color: #111;
+    margin: 0.25rem;
+    display: block;
+    border: none;
+    cursor: pointer;
+    font-size: 0;
+    color: transparent;
+    user-select: none;
+    text-align: center;
+    width: 0.55rem;
+    height: 0.5rem;
+    padding: 0;
+    line-height: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem #eee;
+    transition: ease all 0.5s;
+}
+
+.embed-figure-carousel-wrapper .pagination button.active {
+    color: white;
+    width: 2rem;
+    /*height: 0.9rem;*/
+}
